@@ -1,0 +1,41 @@
+.nav {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 480px;
+  height: 100vh;
+  padding: 83px 0 0 81px;
+  background-color: #101214;
+  &:after {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 3px;
+    height: 72px;
+    background-color: #dc1a1a;
+  }
+
+  &__link {
+    position: relative;
+    margin-bottom: 21px;
+    display: block;
+    color: #eeeeee;
+    font-family: "Muller";
+    font-size: 14px;
+    line-height: 1;
+    font-weight: 300;
+    letter-spacing: 0.7px;
+    &:after {
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background-color: #dc1a1a;
+      transition: width 0.3s ease;
+    }
+    &:hover:after {
+      width: 137px;
+    }
+  }
+}

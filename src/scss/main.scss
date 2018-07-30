@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  &:hover, &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+  &:before, &:after {
+    content: '';
+  }
+}
+
+body {
+  background-color: #101214;
+}
