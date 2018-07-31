@@ -9,6 +9,7 @@
   background-color: #101214;
   transform: translateX(-480px);
   transition: transform 0.3s;
+  transition-timing-function: ease;
   &_active {
     transform: translateX(0);
   }
@@ -94,17 +95,27 @@
   position: fixed;
   left: 80px;
   top: 50px;
-  overflow: hidden;
   width: 42px;
-  height: 65px;
+  height: 80px;
   cursor: pointer;
-  &:hover .nav-button__icon_1 {
-    animation: burger-button infinite 1s linear;
+  &:hover {
+    .nav-button__icon-side:before {
+      animation: burger-icon-side_1 linear infinite 0.4s;
+    }
+    .nav-button__icon-side:after {
+      animation: burger-icon-side_2 linear infinite 0.4s;
+    }
+    .nav-button__icon-center:before {
+      animation: burger-icon-center_1 linear infinite 0.4s;
+    }
+    .nav-button__icon-center:after {
+      animation: burger-icon-center_2 linear infinite 0.4s;
+    }
+    .pseudo-helper {
+      animation: burger-icon-center_3 linear infinite 0.4s;
+    }
   }
-  &:hover .nav-button__icon_2 {
-    animation: burger-button_duplicate infinite 1s linear;
-    animation-delay: 0.5s;
-  }
+
   &__text {
     position: absolute;
     bottom: 0;
@@ -113,31 +124,105 @@
     letter-spacing: 1.4px;
     color: #5c6772;
   }
-  &__icon {
+
+  &__icon-side {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 42px;
-    height: 37px;
-    background: url('./img/icons/burger-icon.svg') center center no-repeat;
-    background-size: cover;
+    width: 28px;
+    height: 5px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #fff;
+    }
+    &:after {
+      transform: translate(-100%, 10%)
+    }
+    &_top {
+      top: 14px;
+      left: 0;
+    }
+    &_bottom {
+      top: 28px;
+      right: 0;
+    }
+  }
+
+  &__icon-center {
+    position: absolute;
+    top: 21px;
+    left: -7.5px;
+    width: 56px;
+    height: 5px;
+    transform: rotate(-45deg);
+    overflow: hidden;
+    &:before, &:after, .pseudo-helper {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 50%;
+      height: 100%;
+      background-color: #fff;
+    }
+    .pseudo-helper {
+      transform: translate(115%, 10%)
+    }
+    &:before {
+      transform: translate(115%, 10%)
+    }
+    &:after {
+      transform: translate(-15%, 10%)
+    }
   }
 }
 
-@keyframes burger-button {
+@keyframes burger-icon-side_1 {
   from {
-    transform: translate(-100%,100%)
+    transform: translate(0, 0)
   }
   to {
-    transform: translate(100%, -100%)
+    transform: translate(-140%, 10%)
   }
 }
 
-@keyframes burger-button_duplicate {
+@keyframes burger-icon-side_2 {
   from {
-    transform: translate(-100%,100%)
+    transform: translate(140%, 10%)
   }
   to {
-    transform: translate(100%, -100%)
+    transform: translate(0, 0)
+  }
+}
+
+@keyframes burger-icon-center_1 {
+  from {
+    transform: translate(115%, 10%)
+  }
+  to {
+    transform: translate(-15%, 10%)
+  }
+}
+
+@keyframes burger-icon-center_2 {
+  from {
+    transform: translate(-15%, 10%)
+  }
+  to {
+    transform: translate(-145%, 10%)
+  }
+}
+
+@keyframes burger-icon-center_3 {
+  from {
+    transform: translate(245%, 10%)
+  }
+  to {
+    transform: translate(115%, 10%)
   }
 }

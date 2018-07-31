@@ -1,0 +1,46 @@
+.header {
+  background-color: #1e2125;
+  &__logo-wrapper {
+    display: flex;
+    height: 142px;
+    justify-content: center;
+    align-items: center;
+  }
+  &__logo {
+    width: 209px;
+    height: 35px;
+    background: url('img/icons/logo_white.svg') center center no-repeat;
+    background-size: cover;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__text {
+    padding-top: 55px;
+    padding-left: 6px;
+    width: 480px;
+  }
+
+  &__prelog {
+    display: inline-block;
+    margin-bottom: 22px;
+  }
+
+  &__heading {
+    margin-bottom: 45px;
+  }
+  
+  &__desc {
+    margin-bottom: 85px;
+    max-width: 380px;
+    padding-left: 5px;
+    font-size: 16px;
+    line-height: 1.7;
+    letter-spacing: 0.6px;
+    font-weight: 300;
+    color: #7c8c9b;
+  }
+  &__image {
+
+  }
+}

@@ -10,11 +10,6 @@
   }
 }
 
-body {
-  background-color: #101214;
-  font-family: "Muller", sans-serif;
-}
-
 @font-face {
   font-family: 'RussoOne';
   src: url('fonts/RussoOne-Regular.woff') format('woff'),
@@ -53,4 +48,68 @@ body {
   url('fonts/MullerBold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
+}
+
+body {
+  background-color: #101214;
+  font-family: "Muller", sans-serif;
+}
+
+.container {
+  margin: 0 auto;
+  width: 1280px;
+}
+
+h1 {
+  font-family: RussoOne, sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-style: italic;
+  font-weight: 300;
+}
+
+.prelog {
+  color: #dc1a1a;
+  font-family: KaushanScript, serif;
+  font-size: 36px;
+  font-style: italic;
+}
+
+.button {
+  position: relative;
+  margin-left: 30px;
+  height: 57px;
+  width: 223px;
+  border: 4px solid #dc1a1a;
+  transform: skewX(-22deg);
+  background-color: transparent;
+  color: #fff;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color, letter-spacing 0.15s;
+  &:hover {
+    background-color: #dc1a1a;
+    letter-spacing: 3px;
+    &:before {
+      left: -20px
+    }
+  }
+  & > span {
+    display: block;
+    font-weight: 700;
+    transform: skewX(22deg);
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    left: -24px;
+    top: -4px;
+    height: 57px;
+    width: 2px;
+    background-color: #fff;
+    transition: left 0.15s;
+  }
 }

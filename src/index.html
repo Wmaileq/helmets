@@ -20,22 +20,38 @@
   <span class="nav__close" onclick="toggleMenu()"></span>
 </nav>
 
-<div class="nav-button">
+<div class="nav-button" onclick="toggleMenu()">
   <span class="nav-button__text">Menu</span>
-  <span class="nav-button__icon nav-button__icon_1"></span>
-  <span class="nav-button__icon nav-button__icon_2"></span>
+  <div class="nav-button__icon-side nav-button__icon-side_top"></div>
+  <div class="nav-button__icon-center">
+    <span class="pseudo-helper"></span>
+  </div>
+  <div class="nav-button__icon-side nav-button__icon-side_bottom"></div>
 </div>
 
 <header class="header">
-
+  <div class="container">
+    <div class="header__logo-wrapper">
+      <a href="#" class="header__logo"></a>
+    </div>
+    <div class="header__wrapper">
+      <div class="header__text">
+        <span class="header__prelog prelog">Street FX pro</span>
+        <h1 class="header__heading">Streetfighter helmet <nobr>re-designed</nobr></h1>
+        <p class="header__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
+        <button class="header__button button"><span>Discover</span></button>
+      </div>
+      <div class="header__image"></div>
+    </div>
+  </div>
 </header>
 
 <script>
-  function toggleMenu(){
-    const nav = document.getElementById('nav');
-    nav.classList.value.indexOf('nav__active') === -1 ? nav.classList.value = 'nav nav__active' : nav.classList.value = 'nav';
+    function toggleMenu(){
+        const nav = document.getElementById('nav');
+        nav.classList.value.indexOf('nav_active') === -1 ? nav.classList.value = 'nav nav_active' : nav.classList.value = 'nav';
 
-  }
+    }
 </script>
 
 </body>
