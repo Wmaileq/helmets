@@ -8,6 +8,7 @@ const gulp = require('gulp'),
   cleanCSS = require('gulp-clean-css'),
   uglify = require('gulp-uglify'),
   imagemin = require('gulp-imagemin'),
+  gwatch = require('gulp-watch'),
   rimraf    = require('rimraf');
 
 const path = {
@@ -15,13 +16,15 @@ const path = {
     html: 'public/',
     css: 'public/',
     js: 'public/',
-    img: 'public/img/'
+    img: 'public/img/',
+    fonts: 'public/fonts/'
   },
   src: {
     html: 'src/*.html',
     scss: 'src/scss/**/*.scss',
     js: 'src/js/**/*.js',
-    img: 'src/img/**/*.*'
+    img: 'src/img/**/*.*',
+    fonts: 'src/fonts/*.*'
   },
   clean: './public'
 };
@@ -76,13 +79,19 @@ function buildImgs() {
     .pipe(bs.reload({stream: true}))
 }
 
-const build = gulp.series(buildHTML, buildCSS, buildJS, buildImgs);
+function buildFonts() {
+  return gulp.src(path.src.fonts)
+    .pipe(gulp.dest(path.public.fonts))
+}
+
+const build = gulp.series(buildHTML, buildCSS, buildJS, buildImgs, buildFonts);
 
 function watch() {
-  gulp.watch(path.src.html, buildHTML);
-  gulp.watch(path.src.scss, buildCSS);
-  gulp.watch(path.src.js, buildJS);
-  gulp.watch(path.src.img, buildImgs);
+  gwatch(path.src.html, buildHTML);
+  gwatch(path.src.scss, buildCSS);
+  gwatch(path.src.js, buildJS);
+  gwatch(path.src.img, buildImgs);
+  gwatch(path.src.img, buildFonts);
 }
 
 function clean(cb) {

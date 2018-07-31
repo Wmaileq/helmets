@@ -8,11 +8,49 @@
     text-decoration: none;
     outline: none;
   }
-  &:before, &:after {
-    content: '';
-  }
 }
 
 body {
   background-color: #101214;
+  font-family: "Muller", sans-serif;
+}
+
+@font-face {
+  font-family: 'RussoOne';
+  src: url('fonts/RussoOne-Regular.woff') format('woff'),
+  url('fonts/RussoOne-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'KaushanScript';
+  src: url('fonts/KaushanScript-Regular.woff') format('woff'),
+  url('fonts/KaushanScript-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('fonts/MullerLight.woff') format('woff'),
+  url('fonts/MullerLight.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('fonts/MullerRegular.woff') format('woff'),
+  url('fonts/MullerRegular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Muller';
+  src: url('fonts/MullerBold.woff') format('woff'),
+  url('fonts/MullerBold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }

@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<nav class="nav">
+<nav id="nav" class="nav">
   <a href="#customization" class="nav__link">Customization</a>
   <a href="#features" class="nav__link">Features</a>
   <a href="#size-range" class="nav__link">Size range</a>
@@ -17,11 +17,26 @@
   <a href="#about-company" class="nav__link">About company</a>
   <a href="#official-website" class="nav__link">Visit official website</a>
   <a href="#returns" class="nav__link">Returns</a>
+  <span class="nav__close" onclick="toggleMenu()"></span>
 </nav>
+
+<div class="nav-button">
+  <span class="nav-button__text">Menu</span>
+  <span class="nav-button__icon nav-button__icon_1"></span>
+  <span class="nav-button__icon nav-button__icon_2"></span>
+</div>
 
 <header class="header">
 
 </header>
+
+<script>
+  function toggleMenu(){
+    const nav = document.getElementById('nav');
+    nav.classList.value.indexOf('nav__active') === -1 ? nav.classList.value = 'nav nav__active' : nav.classList.value = 'nav';
+
+  }
+</script>
 
 </body>
 </html>
