@@ -2,6 +2,7 @@
   position: fixed;
   left: 0;
   top: 0;
+  overflow: hidden;
   z-index: 10;
   width: 480px;
   height: 100vh;
@@ -12,6 +13,17 @@
   transition-timing-function: ease;
   &_active {
     transform: translateX(0);
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 170px;
+    right: -15px;
+    width: 481px;
+    height: 395px;
+    background: url('img/icons/logo_bg-menu.svg') center center no-repeat;
+    background-size: cover;
+    opacity: 0.5;
   }
   &:after {
     content: '';
