@@ -1,8 +1,35 @@
 .header {
+  position: relative;
   width: 100%;
-  height: 1177px;
+  height: 1205px;
   background: url('img/header-bg.jpg') center center no-repeat;
   background-size: cover;
+  overflow: hidden;
+  &__container {
+    height: 100%;
+    &:before {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      bottom: 90px;
+      right: 40%;
+      background-color: #2b2f33;
+      width: 1150px;
+      height: 200px;
+      transform: rotate(-17.5deg)
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      bottom: 555px;
+      left: 72%;
+      background-color: #2b2f33;
+      width: 800px;
+      height: 200px;
+      transform: rotate(-31.7deg)
+    }
+  }
   &__logo-wrapper {
     display: flex;
     height: 142px;
@@ -12,11 +39,14 @@
   &__logo {
     width: 209px;
     height: 35px;
-    background: url('img/icons/logo_white.svg') center center no-repeat;
+    background: url('img/icons/logo_red-white.svg') center center no-repeat;
     background-size: cover;
   }
   &__wrapper {
+    position: relative;
+    z-index: 1;
     display: flex;
+
   }
   &__text {
     padding-top: 55px;
@@ -50,6 +80,7 @@
 
   &__helmet {
     position: absolute;
+    z-index: 1;
     right: -136px;
     top: -141px;
     width: 878px;
@@ -60,6 +91,7 @@
 
   &__customize {
     position: absolute;
+    z-index: 2;
     top: 60px;
     right: 5px;
     width: 113px;
