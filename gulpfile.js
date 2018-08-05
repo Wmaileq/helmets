@@ -74,7 +74,7 @@ function buildJS() {
 
 function buildImgs() {
   return gulp.src(path.src.img)
-    .pipe(imagemin())
+    // .pipe(imagemin())
     .pipe(gulp.dest(path.public.img))
     .pipe(bs.reload({stream: true}))
 }

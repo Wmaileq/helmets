@@ -1,40 +1,334 @@
 .custom {
   position: relative;
-  margin-top: 160px;
+  margin-top: -515px;
+  padding-bottom: 400px;
+  overflow: hidden;
   &:before {
     content: '';
     position: absolute;
-    top: -287px;
-    width: 100%;
-    height: 1000px;
-    background: #101214;
-    transform: skewY(-24.7deg)
+    right: 0;
+    top: 370px;
+    width: calc(50% + 640px);
+    height: 1408px;
+    background: url('img/constructor-bg.png') left top no-repeat;
+    background-size: cover;
   }
-  &:after {
-    content: '';
-    position: absolute;
-    top: -784px;
-    width: 100%;
-    height: 1000px;
-    background: url('img/customization-bg.png') right top no-repeat;
-    transform: skewY(3.4deg);
-    opacity: 0.1;
+
+  &__constructor {
+    display: flex;
+
   }
-  &__text {
-    margin-top: -312px;
-    padding-left: 715px;
+  &__result {
+    width: 560px;
+    padding-left: 163px;
   }
-  &__prelog {
-    display: inline-block;
+
+  &__image {
+    margin-left: -163px;
+    height: 915px;
+    width: calc(100% + 163px);
+  }
+
+  &__category {
+    margin-bottom: 65px;
+    font-size: 18px;
+    letter-spacing: 1px;
+    color: #fff;
+  }
+
+  &__props {
+    margin-bottom: 50px;
+    color: #fff;
+  }
+
+  &__prop {
+    display: flex;
+    margin-bottom: 12px;
+    width: 220px;
+    font-size: 12px;
+  }
+
+  &__prop-key {
+    flex-grow: 0;
+    font-weight: 700;
+  }
+
+  &__prop-fill {
+    flex-grow: 1;
+    border-bottom: 1px dotted #fff;
+  }
+
+  &__prop-value {
+    flex-grow: 0;
+    font-weight: 300;
+    letter-spacing: 1px;
+  }
+
+  &__price {
+    margin-bottom: 40px;
+    font-size: 30px;
+    letter-spacing: 1.5px;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &__button {
+    margin-bottom: 12px;
+  }
+
+  &__hint {
+    font-size: 10px;
+    font-weight: 300;
+    text-transform: uppercase;
+    color: #81858a;
+    letter-spacing: 2px;
+  }
+
+  &__options {
+    margin-left: 78px;
+    width: 640px;
+    padding-top: 695px;
+  }
+
+  &__opt-wrapper {
+    margin-bottom: 15px;
+  }
+
+  &__opt-heading {
     margin-bottom: 20px;
-    font-style: normal!important;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+    color: #fff;
   }
-  &__desc {
-    margin-top: 30px;
-    width: 210px;
-    color: #7c8c9b;
-    font-size: 16px;
-    line-height: 30px;
-    letter-spacing: 0.6px;
+
+  &__opt-list {
+    display: flex;
+  }
+
+  &__opt-item {
+    margin-right: 50px;
+    cursor: pointer;
+    &_visor {
+      margin-right: 35px;
+    }
+    &_holder {
+      margin-right: 30px;
+    }
+    &:hover {
+      .custom__opt-img {
+        transform: scale(1.1);
+        &_holder {
+          transform: scale(1.1) rotate(45deg);
+        }
+      }
+    }
+  }
+
+  &__opt-img {
+    margin-bottom: 15px;
+    transition: transform 0.2s;
+    &_helmet {
+      height: 60px;
+    }
+    &_visor {
+      margin-top: 18px;
+      margin-bottom: 20px;
+      height: 33px;
+    }
+    &_holder {
+      margin-top: 18px;
+      transform: rotate(35deg)
+    }
+  }
+
+  &__opt-name {
+    width: 60px;
+    height: 45px;
+    font-size: 14px;
+    color: #81858a;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    &_holder {
+      height: 30px;
+    }
+  }
+
+  &__opt-coming {
+    font-size: 11px;
+    color: #dc1a1a;
+    letter-spacing: 0.5px;
+    font-weight: 700;
+  }
+}
+
+.const {
+  &__helmet {
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    &_g {
+      top: 340px;
+      left: 78px;
+    }
+    &_m {
+      top: 350px;
+      left: 45px;
+    }
+    &_w {
+      top: 353px;
+      left: 34px;
+    }
+    &.visible {
+      opacity: 1;
+    }
+    &.animation-start {
+      z-index: 1;
+      animation: helmetStart 0.7s ease;
+    }
+    &.helmet-chosen {
+      animation: helmetChoose 0.7s ease;
+    }
+  }
+  &__visor {
+    position: absolute;
+    top: 470px;
+    left: 125px;
+    opacity: 0;
+    transition: opacity 1s;
+    &.visible {
+      opacity: 1;
+    }
+    &.visor-chosen {
+      animation: visorChosen 0.3s ease;
+    }
+    &.animation-start {
+      animation: visorStart 0.3s ease;
+      &.visor-1 {
+        top: 410px;
+        z-index: 2;
+      }
+      &.visor-2 {
+        top: 370px;
+        z-index: 3;
+      }
+      &.visor-3 {
+        top: 330px;
+        z-index: 4;
+      }
+      &.visor-4 {
+        top: 290px;
+        z-index: 5;
+      }
+      &.visor-5 {
+        top: 250px;
+        z-index: 6;
+      }
+      &.visor-6 {
+        top: 210px;
+        z-index: 7;
+      }
+    }
+  }
+  &__holder {
+    position: absolute;
+    top: 533px;
+    left: 133px;
+    opacity: 0;
+    transition: opacity 0.3s;
+    &.visible {
+      opacity: 8;
+    }
+    &.holder-chosen {
+      animation: holderChosen 0.3s ease
+    }
+    &.animation-start {
+      animation: holderStart 0.3s ease;
+      &.holder-1 {
+        top: 527px;
+        left: 105px;
+        z-index: 9;
+      }
+      &.holder-2 {
+        top: 520px;
+        left: 75px;
+        z-index: 10;
+      }
+      &.holder-3 {
+        top: 513px;
+        left: 41px;
+        z-index: 11;
+      }
+      &.holder-4 {
+        top: 500px;
+        left: 10px;
+        z-index: 12;
+      }
+      &.holder-5 {
+        top: 495px;
+        left: -25px;
+        z-index: 13;
+      }
+    }
+  }
+}
+
+@keyframes helmetStart {
+  0% {
+    transform: translateY(50px)
+  }
+  100% {
+    transform: translateY(0)
+  }
+}
+
+@keyframes helmetChoose {
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes visorStart {
+  0% {
+    transform: translateY(80px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes visorChosen {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes holderStart {
+  0% {
+    transform: translate(30px, 15px)
+  }
+  100% {
+    transform: translate(0,0);
+  }
+}
+
+@keyframes holderChosen {
+  0% {
+    transform: translate(-50px, -10px)
+  }
+  100% {
+    transform: translate(0,0);
   }
 }
