@@ -1,0 +1,118 @@
+.evolution {
+  position: relative;
+  margin-top: -550px;
+  height: 1508px;
+  padding-top: 465px;
+  z-index: 0;
+  background: url('../img/evolution.jpg') top center no-repeat;
+  background-size: cover;
+  &__wrapper {
+    margin-bottom: 80px;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__main {
+    max-width: 400px;
+  }
+  &__four {
+    position: relative;
+    margin-bottom: 10px;
+    width: 333px;
+    height: 333px;
+    border: 1px solid rgba(#fff, 0.23);
+    border-radius: 50%;
+    &:before {
+      content: '';
+      position: absolute;
+      left: calc(50% - 145px);
+      top: calc(50% - 154px);
+      width: 270px;
+      height: 288px;
+      background: url('../img/4.png') center center no-repeat;
+      background-size: cover;
+    }
+  }
+  &__main-heading {
+    margin-bottom: 20px;
+    font-size: 78px;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #fff;
+    font-family: RussoOne, sans-serif;
+  }
+  &__main-postlog {
+    margin-bottom: 45px;
+    max-width: 360px;
+    font-weight: 300;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    color: #7c8c9b;
+    line-height: 1.8;
+  }
+  &__main-text {
+    position: relative;
+    padding-left: 100px;
+    max-width: 380px;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    color: #667480;
+    line-height: 1.9;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 10px;
+      width: 65px;
+      height: 2px;
+      background-color: #ff0000;
+    }
+  }
+  &__side {
+    position: relative;
+    width: 650px;
+    padding-top: 25px;
+  }
+  &__prelog {
+    display: block;
+    margin-bottom: 22px;
+  }
+  &__heading {
+    margin-bottom: 32px;
+    font-family: 'Muller', sans-serif;
+    font-weight: 300;
+  }
+  &__desc {
+    max-width: 380px;
+    color: #7c8c9b;
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+  }
+  &__image {
+    position: absolute;
+    bottom: -250px;
+    right: -150px;
+    transform: translateX(-60px)
+  }
+  &__last {
+    position: relative;
+    padding-left: 280px;
+    width: 540px;
+    color: #dc1a1a;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 220px;
+      background: url('../img/icons/aerodynamics.svg') center center no-repeat;
+      background-size: cover;
+      width: 49px;
+      height: 39px;
+      transform: rotate(-90deg);
+    }
+  }
+}

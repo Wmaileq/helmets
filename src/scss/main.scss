@@ -97,12 +97,12 @@ h2 {
   letter-spacing: 2px;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background-color, letter-spacing 0.15s;
+  transition: background-size 0.15s;
   &:hover {
     background-color: #dc1a1a;
-    letter-spacing: 3px;
-    &:before {
-      left: -20px
+    &:after {
+      opacity: 1;
+      animation: buttonAfter 0.2s ease
     }
   }
   & > span {
@@ -118,6 +118,28 @@ h2 {
     height: 57px;
     width: 2px;
     background-color: #fff;
-    transition: left 0.15s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    left: -4px;
+    top: 0;
+    height: 100%;
+    background-color: #fff;
+    opacity: 0;
+  }
+}
+@keyframes buttonAfter {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  50% {
+    width: 100%;
+    left: 0;
+  }
+  100% {
+    width: 0;
+    left: 100%;
   }
 }

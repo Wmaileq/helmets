@@ -93,17 +93,17 @@
                     <div class="custom__prop">
                         <span class="custom__prop-key">Helmet:</span>
                         <span class="custom__prop-fill"></span>
-                        <span class="custom__prop-value">Army Green</span>
+                        <span id="chosen-helmet" class="custom__prop-value">Army Green</span>
                     </div>
                     <div class="custom__prop">
                         <span class="custom__prop-key">Visor:</span>
                         <span class="custom__prop-fill"></span>
-                        <span class="custom__prop-value">Chamaelon Iridium</span>
+                        <span id="chosen-visor" class="custom__prop-value">Chamaelon Iridium</span>
                     </div>
                     <div class="custom__prop">
                         <span class="custom__prop-key">Visor holders:</span>
                         <span class="custom__prop-fill"></span>
-                        <span class="custom__prop-value">Gold</span></div>
+                        <span id="chosen-holder" class="custom__prop-value">Gold</span></div>
                 </div>
                 <div class="custom__price">£ 229.99</div>
                 <button class="custom__button button"><span>Buy</span></button>
@@ -117,7 +117,7 @@
                             <img src="img/helmet_matte.png" alt="Helmet colour matte" class="custom__opt-img custom__opt-img_helmet">
                             <div class="custom__opt-name">Matte Black</div>
                         </div>
-                        <div id="option-helmet-g" class="custom__opt-item">
+                        <div id="option-helmet-g" class="custom__opt-item chosen">
                             <img src="img/helmet_green.png" alt="Helmet colour green" class="custom__opt-img custom__opt-img_helmet">
                             <div class="custom__opt-name">Army green</div>
                             <div class="custom__opt-coming">Coming<br/> soon</div>
@@ -198,6 +198,28 @@
     </div>
 </section>
 
+<section class="evolution">
+    <div class="container">
+        <div class="evolution__wrapper">
+            <div class="evolution__main">
+                <div class="evolution__four"></div>
+                <div class="evolution__main-heading">Top air inlets</div>
+                <div class="evolution__main-postlog">4 Top Air inlets including a GrillVent™ chin ventilation system</div>
+                <div class="evolution__main-text">The enlarged Easy Flow channels introduced on the EPS liner potentiate the fresh airﬂow distributing the cool air into the interior  around the head contour</div>
+            </div>
+            <div class="evolution__side">
+                <span class="evolution__prelog prelog">Evolution</span>
+                <h2 class="evolution__heading">The game<br/> has changed</h2>
+                <p class="evolution__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
+                <img src="img/evolution-helmet.png" alt="Legendary stig racing helmet adapted" class="evolution__image">
+            </div>
+        </div>
+        <div class="evolution__last">
+            improved shell aerodynamics to reduce the drag
+        </div>
+    </div>
+</section>
+
 <script>
     function toggleMenu(){
         const nav = document.getElementById('nav');
@@ -253,6 +275,15 @@
                     item.classList.remove('visible');
                 }
             });
+            document.querySelectorAll('.chosen').forEach(function(item){
+                if (
+                    ((changeable === 'visor' || changeable === 'holder') && item.id.indexOf('option-helmet') !== -1 ) ||
+                    (changeable === 'visor' && constructor.holderChosen && item.id.indexOf('option-holder') !== -1) ||
+                    (changeable === 'holder' && constructor.visorChosen && item.id.indexOf('option-visor') !== -1)
+                ) {} else {
+                    item.classList.remove('chosen');
+                }
+            });
             setTimeout(function(){
                 document.querySelectorAll('.animation-start').forEach(function(item){item.classList.remove('animation-start')});
             },700);
@@ -268,17 +299,23 @@
         },
         chooseHelmet: function(helmet) {
             this.resetAll('helmet');
+            document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).classList += ' chosen';
+            document.getElementById('chosen-helmet').innerText = document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).querySelector('.custom__opt-name').innerText;
             this[helmet].classList += ' visible helmet-chosen';
             this.helmetChosen = helmet;
         },
         chooseVisor: function(visor) {
             this.resetAll('visor');
+            document.getElementById('option-visor-' + visor).classList += ' chosen';
+            document.getElementById('chosen-visor').innerText = document.getElementById('option-visor-' + visor).querySelector('.custom__opt-name').innerText;
             visor = this.helmetChosen === 'helmetG' ? 'visorG' + visor : 'visorW' + visor;
             this[visor].classList += ' visible visor-chosen';
             this.visorChosen = true;
         },
         chooseHolder: function(holder) {
             this.resetAll('holder');
+            document.getElementById('option-holder-' + holder.slice(-1)).classList += ' chosen';
+            document.getElementById('chosen-holder').innerText = document.getElementById('option-holder-' + holder.slice(-1)).querySelector('.custom__opt-name').innerText;
             this[holder].classList += ' visible holder-chosen';
             this.holderChosen = true;
         }

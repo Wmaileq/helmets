@@ -1,7 +1,8 @@
 .custom {
   position: relative;
+  z-index: 1;
   margin-top: -515px;
-  padding-bottom: 400px;
+  padding-bottom: 500px;
   overflow: hidden;
   &:before {
     content: '';
@@ -107,8 +108,27 @@
   }
 
   &__opt-item {
+    position: relative;
     margin-right: 50px;
     cursor: pointer;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      z-index: 1;
+      right: 5px;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      opacity: 0;
+      transform: translateY(-50px);
+      transition: opacity 0.3s, transform 0.3s;
+    }
+    &.chosen:before {
+      background-color: #dc1a1a;
+      transform: translateY(0);
+      opacity: 1;
+    }
     &_visor {
       margin-right: 35px;
     }
@@ -176,8 +196,8 @@
       left: 45px;
     }
     &_w {
-      top: 353px;
-      left: 34px;
+      top: 349px;
+      left: 38px;
     }
     &.visible {
       opacity: 1;
@@ -192,15 +212,31 @@
   }
   &__visor {
     position: absolute;
-    top: 470px;
-    left: 125px;
+    top: 465px;
+    left: 129px;
     opacity: 0;
-    transition: opacity 1s;
     &.visible {
       opacity: 1;
+      transition: opacity 1s;
     }
     &.visor-chosen {
       animation: visorChosen 0.3s ease;
+      &#visor-g-1 {
+        top: 463px;
+      }
+      &#visor-g-2 {
+        top: 469px
+      }
+      &#visor-g-3 {
+        top: 461px;
+        left: 116px
+      }
+      &#visor-w-1 {
+        top: 461px
+      }
+      &#visor-w-3 {
+        top: 462px;
+      }
     }
     &.animation-start {
       animation: visorStart 0.3s ease;
