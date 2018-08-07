@@ -1,8 +1,8 @@
 .evolution {
   position: relative;
-  margin-top: -550px;
-  height: 1508px;
-  padding-top: 465px;
+  margin-top: -600px;
+  padding-top: 515px;
+  padding-bottom: 20px;
   z-index: 0;
   background: url('../img/evolution.jpg') top center no-repeat;
   background-size: cover;
@@ -98,16 +98,17 @@
   }
   &__last {
     position: relative;
-    padding-left: 280px;
+    padding-left: 304px;
     width: 540px;
     color: #dc1a1a;
     font-size: 16px;
     line-height: 1.9;
     letter-spacing: 0.5px;
+    font-style: italic;
     &:before {
       content: '';
       position: absolute;
-      left: 220px;
+      left: 236px;
       background: url('../img/icons/aerodynamics.svg') center center no-repeat;
       background-size: cover;
       width: 49px;

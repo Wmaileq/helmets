@@ -1,0 +1,79 @@
+.features {
+  position: relative;
+  margin-top: -140px;
+  padding-top: 280px;
+  background: url('../img/spec-bg.png') center center no-repeat;
+  background-size: cover;
+  height: 3482px;
+}
+.noise {
+  display: flex;
+  justify-content: space-between;
+  &__img-wrapper {
+    position: relative;
+    width: 560px;
+    padding-top: 885px;
+    flex-grow: 0;
+    flex-shrink: 0;
+  }
+  &__img {
+    position: absolute;
+    top: 0;
+    left: -80px;
+  }
+  &__percents {
+    position: absolute;
+    top: 660px;
+    left: 35px;
+  }
+  &__img-text {
+    font-family: RussoOne, sans-serif;
+    font-size: 78px;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  &__text {
+    padding-top: 350px;
+    width: 640px;
+    padding-right: 80px;
+  }
+  &__prelog {
+    display: block;
+    margin-bottom: 35px;
+  }
+  &__heading {
+    margin-bottom: 45px;
+    font-weight: 300;
+    font-family: Muller, sans-serif;
+  }
+  &__desc {
+    margin-bottom: 75px;
+    color: #7c8c9b;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+  }
+  &__icon {
+    position: relative;
+    width: 250px;
+    margin-left: 170px;
+    color: #dc1a1a;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    font-style: italic;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 15px;
+      left: -95px;
+      width: 73px;
+      height: 37px;
+      background: url('../img/icons/pouch.svg') center center no-repeat;
+      background-size: cover;
+      transform: rotate(90deg)
+    }
+  }
+}
