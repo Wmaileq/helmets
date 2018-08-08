@@ -4,7 +4,7 @@
   padding-top: 515px;
   padding-bottom: 20px;
   z-index: 0;
-  background: url('../img/evolution.jpg') top center no-repeat;
+  background: url('img/evolution.jpg') top center no-repeat;
   background-size: cover;
   &__wrapper {
     margin-bottom: 80px;
@@ -28,7 +28,7 @@
       top: calc(50% - 154px);
       width: 270px;
       height: 288px;
-      background: url('../img/4.png') center center no-repeat;
+      background: url('img/4.png') center center no-repeat;
       background-size: cover;
     }
   }
@@ -109,7 +109,7 @@
       content: '';
       position: absolute;
       left: 236px;
-      background: url('../img/icons/aerodynamics.svg') center center no-repeat;
+      background: url('img/icons/aerodynamics.svg') center center no-repeat;
       background-size: cover;
       width: 49px;
       height: 39px;

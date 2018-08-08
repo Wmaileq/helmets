@@ -2,7 +2,7 @@
   position: relative;
   margin-top: -140px;
   padding-top: 280px;
-  background: url('../img/spec-bg.png') center center no-repeat;
+  background: url('img/spec-bg.png') center center no-repeat;
   background-size: cover;
   height: 3482px;
 }
@@ -71,9 +71,104 @@
       left: -95px;
       width: 73px;
       height: 37px;
-      background: url('../img/icons/pouch.svg') center center no-repeat;
+      background: url('img/icons/pouch.svg') center center no-repeat;
       background-size: cover;
       transform: rotate(90deg)
     }
+  }
+}
+
+.sizes {
+  position: relative;
+  padding-top: 240px;
+  text-align: center;
+  &__prelog {
+    margin-bottom: 40px;
+    font-size: 48px;
+  }
+  &__heading {
+    margin-bottom: 40px;
+  }
+  &__desc {
+    margin: 0 auto;
+    width: 500px;
+    color: #7c8c9b;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+  }
+  &__buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__wrapper {
+    display: flex;
+    padding-top: 80px;
+    justify-content: space-between;
+  }
+  &__hint {
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.5px;
+    line-height: 1.9;
+    color: #eeeeee;
+  }
+  &__buttons {
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  &__button {
+    position: relative;
+    margin-bottom: 30px;
+    width: 175px;
+    height: 60px;
+    background-color: #101214;
+    font-size: 18px;
+    color: #7c8c9b;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: 0;
+    transform: skewX(-20deg);
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background-color: #dc1a1a;
+      transition: width 0.2s ease;
+    }
+    &:hover, &_active {
+      &:before {
+        width: 100%;
+      }
+    }
+    span {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      transform: skewX(20deg);
+    }
+  }
+  &__img {
+    position: relative;
+    margin-right: -40px;
+    width: 577px;
+    height: 577px;
+    border-radius: 50%;
+    border: 1px solid rgba(#fff, 0.13);
+  }
+  &__helmet {
+    position: absolute;
+    right: -80px;
+    top: -115px;
   }
 }
