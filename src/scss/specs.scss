@@ -1,0 +1,134 @@
+.specs {
+  margin-top: -710px;
+  padding-bottom: 330px;
+  background: url('img/scratch-bg.jpg') center center no-repeat;
+  background-size: cover;
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    &_top {
+      margin-bottom: 80px;
+    }
+  }
+  &__helmet {
+    position: relative;
+    width: 560px;
+  }
+  &__helmet-img {
+    position: absolute;
+    top: 0;
+    left: -138px;
+  }
+  &__visor {
+    position: absolute;
+    top: 203px;
+    left: -10px;
+    animation: visor-lighting infinite 4s linear;
+  }
+  &__text {
+    padding-top: 310px;
+    width: 640px;
+  }
+  &__prelog {
+    margin-bottom: 15px;
+    &_bottom {
+      margin-bottom: 25px;
+    }
+  }
+  &__heading {
+    margin-bottom: 25px;
+    &_bottom {
+      margin-bottom: 35px;
+    }
+  }
+  &__desc {
+    margin-bottom: 55px;
+    font-size: 16px;
+    line-height: 1.9;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+    color: #7c8c9b;
+    &_bottom {
+      margin-bottom: 75px;
+    }
+  }
+  &__icon {
+    position: relative;
+    padding-left: 170px;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.5px;
+    color: #dc1a1a;
+    font-style: italic;
+    &_shower:before {
+      content: '';
+      position: absolute;
+      left: 83px;
+      top: 8px;
+      width: 54px;
+      height: 46px;
+      background: url('img/icons/shower.svg') center center no-repeat;
+      background-size: cover;
+    }
+    &_temperature:before {
+      content: '';
+      position: absolute;
+      left: 83px;
+      top: 70px;
+      width: 55px;
+      height: 57px;
+      background: url('img/icons/temperature.svg') center center no-repeat;
+      background-size: cover;
+      transform: rotate(-45deg)
+    }
+  }
+  &__icon-heading {
+    margin-bottom: 25px;
+    font-size: 24px;
+    color: #fff;
+  }
+}
+@keyframes visor-lighting {
+  0% {
+    opacity: 1;
+  }
+  5% {
+    opacity: 1;
+  }
+  6% {
+    opacity: 0.2;
+  }
+  7% {
+    opacity: 1;
+  }
+  12% {
+    opacity: 1;
+  }
+  13% {
+    opacity: 0.2;
+  }
+  14% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 1;
+  }
+  26% {
+    opacity: 0.2;
+  }
+  27% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  42% {
+    opacity: 0.2;
+  }
+  43% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
