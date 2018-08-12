@@ -1,0 +1,126 @@
+.question {
+  position: relative;
+  margin-top: -850px;
+  padding-bottom: 800px;
+  background: transparent url('img/question-bg.png') center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  &__top-helmet {
+    position: absolute;
+    top: -270px;
+    right: -140px;
+  }
+  &__helmet {
+    margin-bottom: 110px;
+    position: relative;
+    margin-top: 850px;
+    display: inline-block;
+    width: 627px;
+    height: 627px;
+    border-radius: 50%;
+    background-color: #dc1a1a;
+    &:after {
+      content: '';
+      position: absolute;
+      left: -21%;
+      top: -10%;
+      background: url('img/question-helmet.png') center center no-repeat;
+      background-size: cover;
+      width: 140%;
+      height: 140%;
+    }
+  }
+  &__specs {
+    margin-bottom: 175px;
+  }
+  &__list-heading {
+    margin-bottom: 30px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  &__list {
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    font-weight: 300;
+    color: #c3c3c3;
+    line-height: 2;
+  }
+  &__prelog {
+    margin-bottom: 20px;
+  }
+  &__heading {
+    margin-bottom: 75px;
+    font-family: RussoOne, sans-serif;
+    font-size: 60px;
+    color: #fff;
+    text-transform: uppercase;
+    font-style: italic;
+  }
+  &__form-wrapper {
+    position: relative;
+    display: flex;
+    &_first {
+      margin-bottom: 110px;
+    }
+    &_second {
+      margin-bottom: 135px;
+    }
+  }
+  &__input-wrapper {
+    position: relative;
+    flex-grow: 1;
+    &:nth-of-type(1) {
+      margin-right: 85px;
+    }
+  }
+  &__input {
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: 0;
+    color: #eee;
+    font-weight: 300;
+    font-size: 16px;
+    font-family: Muller, sans-serif;
+    &::placeholder {
+      color: #eeeeee;
+      font-weight: 300;
+      font-size: 16px;
+      letter-spacing: 0.5px;
+    }
+    &:focus+span {
+      height: 11px;
+    }
+  }
+  &__input-border {
+      position: absolute;
+      left: 0;
+      top: 100%;
+      width: 100%;
+      height: 4px;
+      background-color: #dc1a1a;
+      transition: height 0.2s ease;
+  }
+  &__textarea {
+    width: 100%;
+    background-color: transparent;
+    border: 0;
+    font-weight: 300;
+    color: #eee;
+    font-family: Muller, sans-serif;
+    letter-spacing: 0.6px;
+    &:focus+span {
+      height: 11px;
+    }
+    &::placeholder {
+      color: #eee;
+      letter-spacing: 0.7px;
+    }
+  }
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+  }
+}

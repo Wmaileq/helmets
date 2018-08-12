@@ -1,6 +1,7 @@
 .specs {
-  margin-top: -710px;
-  padding-bottom: 330px;
+  margin-top: -950px;
+  padding-top: 240px;
+  padding-bottom: 430px;
   background: url('img/scratch-bg.jpg') center center no-repeat;
   background-size: cover;
   &__wrapper {
@@ -86,6 +87,10 @@
     margin-bottom: 25px;
     font-size: 24px;
     color: #fff;
+    font-style: normal;
+  }
+  &__icon-text {
+    width: 355px;
   }
 }
 @keyframes visor-lighting {

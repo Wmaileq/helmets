@@ -1,0 +1,75 @@
+.footer {
+  position: relative;
+  padding-top: 500px;
+  padding-bottom: 160px;
+  background: url('img/footer-bg.png') top center no-repeat;
+  background-size: cover;
+  &__wrapper {
+    display: flex;
+  }
+  &__text {
+    margin-right: 240px;
+    width: 320px;
+  }
+  &__logo {
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  &__text-wrapper {
+    color: #667480;
+    font-size: 12px;
+    line-height: 1.5;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+  }
+  &__nav {
+    margin-right: 80px;
+    width: 160px;
+  }
+  &__list-heading {
+    margin-bottom: 35px;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    color: #fff;
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+  }
+  &__list-item {
+    margin-bottom: 15px;
+    color: #fff;
+    transition: color 0.2s ease;
+    &:hover {
+      color: #dc1a1a;
+    }
+  }
+  &__socials {
+    margin-bottom: 25px;
+    display: flex;
+  }
+  &__social-item {
+    margin-right: 15px;
+    img {
+      height: 15px;
+    }
+  }
+  &__copyright {
+    font-size: 12px;
+    color: #56626c;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+  }
+  &__follow {
+    margin-right: 80px;
+  }
+  &__wrapper {
+    display: flex;
+  }
+  &__payment-item {
+    margin-right: 15px;
+    height: 35px;
+    opacity: 0.12;
+  }
+}
