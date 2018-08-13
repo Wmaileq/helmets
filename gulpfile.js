@@ -4,11 +4,13 @@ const gulp = require('gulp'),
   scss = require('gulp-sass'),
   notify = require('gulp-notify'),
   concatcss = require('gulp-concat-css'),
+  concatjs = require('gulp-concat'),
   htmlmin = require('gulp-htmlmin'),
   cleanCSS = require('gulp-clean-css'),
   uglify = require('gulp-uglify'),
   imagemin = require('gulp-imagemin'),
   gwatch = require('gulp-watch'),
+  babel = require('gulp-babel'),
   rimraf    = require('rimraf');
 
 const path = {
@@ -22,7 +24,7 @@ const path = {
   src: {
     html: 'src/*.html',
     scss: 'src/scss/**/*.scss',
-    js: 'src/js/**/*.js',
+    js: 'src/js/',
     img: 'src/img/**/*.*',
     fonts: 'src/fonts/*.*'
   },
@@ -66,8 +68,12 @@ function buildCSS() {
 }
 
 function buildJS() {
-  return gulp.src(path.src.js)
-    .pipe(uglify())
+  return gulp.src([path.src.js + 'wow.min.js', path.src.js + 'main.js'])
+    .pipe(concatjs('bundle.js'))
+    // .pipe(babel({
+    //   presets: ['env']
+    // }))
+    // .pipe(uglify())
     .pipe(gulp.dest(path.public.js))
     .pipe(bs.reload({stream: true}))
 }

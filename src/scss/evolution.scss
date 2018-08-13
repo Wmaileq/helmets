@@ -21,6 +21,13 @@
     height: 333px;
     border: 1px solid rgba(#fff, 0.23);
     border-radius: 50%;
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+    &.zoomIn {
+      animation: 0.5s ease zoomIn;
+      opacity: 1;
+      transform: scale3d(1,1,1);
+    }
     &:before {
       content: '';
       position: absolute;
@@ -94,7 +101,11 @@
     position: absolute;
     bottom: -250px;
     right: -150px;
-    transform: translateX(-60px)
+    transform: translate(100%, 100%);
+    &.slideInRightBottom {
+      animation: slideInRightBottom 1s ease;
+      transform: translate(-60px, 0);
+    }
   }
   &__last {
     position: relative;

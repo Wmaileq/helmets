@@ -2,9 +2,9 @@
   position: relative;
   margin-top: -140px;
   padding-top: 280px;
-  background: url('img/spec-bg.png') center center no-repeat;
+  background: url('img/spec-bg.png') top center no-repeat;
   background-size: cover;
-  height: 3482px;
+  padding-bottom: 1140px;
 }
 .noise {
   display: flex;
@@ -20,11 +20,25 @@
     position: absolute;
     top: 0;
     left: -80px;
+    transform: translateX(-100%);
+    opacity: 0;
+    &.animated {
+      animation: slideInLeft 0.75s ease;
+      transform: translateX(0);
+      opacity: 1;
+    }
   }
-  &__percents {
+  &Text {
     position: absolute;
     top: 660px;
     left: 35px;
+    transform: translateY(100%);
+    opacity: 0;
+    &.animated {
+      animation: slideInUp 0.5s ease;
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
   &__img-text {
     font-family: RussoOne, sans-serif;
@@ -80,7 +94,7 @@
 
 .sizes {
   position: relative;
-  padding-top: 240px;
+  padding-top: 440px;
   text-align: center;
   &__prelog {
     margin-bottom: 40px;

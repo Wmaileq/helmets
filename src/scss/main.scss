@@ -53,6 +53,7 @@
 body {
   background-color: #101214;
   font-family: "Muller", sans-serif;
+  overflow-x: hidden;
 }
 
 .container {
@@ -145,17 +146,27 @@ h2 {
   background: url('img/icons/arrow.svg') center center no-repeat;
   background-size: cover;
   cursor: pointer;
+  opacity: 0;
+  transform-origin: top right;
+  &.visible {
+    opacity: 1;
+    animation: arrowToTop ease 0.4s;
+  }
+  &.invisible {
+    opacity: 0;
+    animation: arrowToTopReverse ease 0.4s;
+  }
   &:after {
     content: '';
     position: fixed;
-    right: 100px;
+    right: 60px;
     bottom: 100px;
     width: 5px;
     height: 5px;
     box-shadow: 0 0 0 0 rgba(#d21515, 0.38);
   }
   &:hover:after {
-    box-shadow: 0 0 90px 10px rgba(#d21515, 0.38);
+    box-shadow: 0 0 90px 40px rgba(#d21515, 0.38);
   }
 }
 @keyframes buttonAfter {
@@ -172,3 +183,73 @@ h2 {
     left: 100%;
   }
 }
+
+@keyframes arrowToTop {
+  0% {
+    opacity: 0;
+    transform: rotate(-90deg)
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg)
+  }
+}
+
+@keyframes arrowToTopReverse {
+  0% {
+    opacity: 1;
+    transform: rotate(0deg)
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-90deg)
+  }
+
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3);
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInRightBottom {
+  from {
+    transform: translate(100%, 100%);
+  }
+
+  to {
+    transform: translate(-60px, 0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
