@@ -9,6 +9,11 @@
     position: absolute;
     top: -270px;
     right: -140px;
+    opacity: 0;
+    &.animated {
+      opacity: 1;
+      animation: slideInUp 0.9s ease;
+    }
   }
   &__helmet {
     margin-bottom: 110px;
@@ -19,6 +24,11 @@
     height: 627px;
     border-radius: 50%;
     background-color: #dc1a1a;
+    opacity: 0;
+    &.animated {
+      opacity: 1;
+      animation: zoomIn 0.9s ease;
+    }
     &:after {
       content: '';
       position: absolute;

@@ -14,6 +14,11 @@
   &__helmet {
     position: relative;
     width: 560px;
+    opacity: 0;
+    &.animated {
+      opacity: 1;
+      animation: slideInLeft 1.25s ease;
+    }
   }
   &__helmet-img {
     position: absolute;
