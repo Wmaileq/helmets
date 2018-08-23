@@ -34,9 +34,9 @@ const constructor = {
     holder5: document.getElementById('holder-5'),
     holder6: document.getElementById('holder-6'),
     holder7: document.getElementById('holder-7'),
-    helmetChosen: 'helmetG',
-    visorChosen: false,
-    holderChosen: false,
+    helmetChosen: 'helmetM',
+    visorChosen: 'visor2',
+    holderChosen: 'holder7',
     playStartingAnimation : function() {
         this.helmetG.classList += ' visible animation-start';
         setTimeout(() => this.visor5.classList += ' visible visor-1 animation-start', 700);
@@ -95,14 +95,14 @@ const constructor = {
         document.getElementById('option-visor-' + visor).classList += ' chosen';
         document.getElementById('chosen-visor').innerText = document.getElementById('option-visor-' + visor).querySelector('.custom__opt-name').innerText;
         this['visor' + visor].classList += ' visible visor-chosen';
-        this.visorChosen = true;
+        this.visorChosen = 'visor' + visor;
     },
     chooseHolder: function(holder) {
         this.resetAll('holder');
         document.getElementById('option-holder-' + holder.slice(-1)).classList += ' chosen';
         document.getElementById('chosen-holder').innerText = document.getElementById('option-holder-' + holder.slice(-1)).querySelector('.custom__opt-name').innerText;
         this[holder].classList += ' visible holder-chosen';
-        this.holderChosen = true;
+        this.holderChosen = holder;
     }
 };
 document.getElementById('option-helmet-g').addEventListener('click', constructor.chooseHelmet.bind(constructor, 'helmetG'));
@@ -194,3 +194,16 @@ window.addEventListener('scroll', function() {
         ticking = true;
     }
 });
+
+function modalShow(){
+    document.getElementById('modal').classList.value += ' active';
+    let helmet = constructor[constructor.helmetChosen].cloneNode();
+    helmet.classList='';
+    let visor = constructor[constructor.visorChosen].cloneNode();
+    visor.classList='';
+    let holder = constructor[constructor.holderChosen].cloneNode();
+    holder.classList='';
+    document.getElementById('modalHelmet').append(helmet)
+    document.getElementById('modalHelmet').append(visor)
+    document.getElementById('modalHelmet').append(holder)
+}

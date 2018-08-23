@@ -101,7 +101,7 @@
             <span id="chosen-holder" class="custom__prop-value">Gold</span></div>
         </div>
         <div class="custom__price">£ 229.99</div>
-        <button class="custom__button button"><span>Buy</span></button>
+        <button class="custom__button button" onclick="modalShow()"><span>Buy</span></button>
         <div class="custom__hint">With current options</div>
       </div>
       <div class="custom__options">
@@ -404,9 +404,50 @@
   </div>
 </footer>
 
-<!-- 
-
- -->
+<div class="modal" id="modal">
+  <div class="modal__wrapper">
+    <div class="modal__left">
+      <div id="modalHelmet" class="modal__helmet">
+        
+      </div>
+      <div class="custom__category">Your style</div>
+        <div class="custom__props modal__props">
+          <div class="custom__propp">
+            <span class="custom__prop-key">Helmet:</span>
+            <span class="custom__prop-fill"></span>
+            <span id="chosen-helmet-modal" class="custom__prop-value">Army Green</span>
+          </div>
+          <div class="custom__prop">
+            <span class="custom__prop-key">Visor:</span>
+            <span class="custom__prop-fill"></span>
+            <span id="chosen-visor-modal" class="custom__prop-value">Chamaelon Iridium</span>
+          </div>
+          <div class="custom__prop">
+            <span class="custom__prop-key">Visor holders:</span>
+            <span class="custom__prop-fill"></span>
+            <span id="chosen-holder-modal" class="custom__prop-value">Gold</span></div>
+        </div>
+    </div>
+    <div class="modal__right">
+      <div class="modal__heading">Buy helmet</div>
+      <div class="modal__price">£ 229.99</div>
+      <div class="modal__buttons">
+        <div class="modal__buttons-wrapper">
+          <div class="modal__hint">Choose your size:</div>
+          <div class="modal__buttons">
+            <button class="modal__button modal__button_active"><span>XS</span></button>
+            <button class="modal__button"><span>Small</span></button>
+            <button class="modal__button"><span>Medium</span></button>
+            <button class="modal__button"><span>Large</span></button>
+            <button class="modal__button"><span>XLarge</span></button>
+            <button class="modal__button"><span>XXL</span></button>
+          </div>
+        </div>
+      </div>
+      <button class="modal__button-buy button"><span>Add to card</span></button>
+    </div>
+  </div>
+</div>
 
 <script src="bundle.js"></script>
 </body>

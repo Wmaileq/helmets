@@ -2,17 +2,98 @@
   position: fixed;
   top: 0;
   left: 0;
+  display: none;
   z-index: 1001;
-  display: flex;
   width: 100%;
   height: 100%;
   align-items: center;
   justify-content: center;
   background-color: rgba(#0c0f11,0.82);
+  &.active {
+    display: flex;
+  }
   &__wrapper {
     display: flex;
     padding: 110px 100px 110px 120px;
-    background: linear-gradient(to bottom left, #222528, #14191c);
+    background: linear-gradient(to bottom right, #222528, #14191c);
   }
-
+  &__left {
+    margin-right: 200px;
+    margin-top: auto;
+  }
+  &__heading {
+    margin-bottom: 30px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 60px;
+    font-weight: 700;
+    color: #eeeeee;
+  }
+  &__price {
+    margin-bottom: 70px;
+    font-size: 24px;
+    color: #fff;
+    font-weight: 700;
+  }
+  &__buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__hint {
+    margin-bottom: 30px;
+    text-align: left;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.5px;
+    color: #dc1a1a;
+  }
+  &__buttons {
+    margin-bottom: 30px;
+    display: flex;
+    width: 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &.animated {
+      opacity: 1;
+      animation: slideInUp 0.9s ease;
+    }
+  }
+   &__button {
+    position: relative;
+    margin-bottom: 30px;
+    width: 175px;
+    height: 60px;
+    background-color: #101214;
+    font-size: 18px;
+    color: #7c8c9b;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    border: 0;
+    transform: skewX(-20deg);
+    &:before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 3px;
+      width: 0;
+      background-color: #dc1a1a;
+      transition: width 0.2s ease;
+    }
+    &:hover, &_active {
+      &:before {
+        width: 100%;
+      }
+    }
+    span {
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      transform: skewX(20deg);
+    }
+  }
+  &__props {
+    margin-bottom: 0;
+  }
 }
