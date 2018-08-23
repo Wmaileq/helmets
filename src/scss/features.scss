@@ -155,22 +155,8 @@
     letter-spacing: 0.5px;
     cursor: pointer;
     border: 0;
+    border-bottom: 3px solid #dc1a1a;
     transform: skewX(-20deg);
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      height: 3px;
-      width: 0;
-      background-color: #dc1a1a;
-      transition: width 0.2s ease;
-    }
-    &:hover, &_active {
-      &:before {
-        width: 100%;
-      }
-    }
     span {
       display: flex;
       height: 100%;
@@ -186,9 +172,6 @@
     font-weight: 700;
     color: #fff;
     text-align: left;
-  }
-  &__button-buy {
-    width: 600px!important;
   }
   &__img {
     position: relative;

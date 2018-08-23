@@ -41,7 +41,7 @@
         <div class="header__prelog prelog">Street FX pro</div>
         <h1 class="header__heading">Streetfighter helmet <nobr>re-designed</nobr></h1>
         <p class="header__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
-        <button class="header__button button"><span>Discover</span></button>
+        <button class="header__button button" onclick="scrollToElement('customization')"><span>Discover</span></button>
       </div>
       <div class="header__image">
         <div class="header__helmet"></div>
@@ -69,18 +69,12 @@
           <img id="helmet-g" class="const__helmet const__helmet_g" src="img/helmet_green.png" alt="Street FX Pro helmet">
           <img id="helmet-m" class="const__helmet const__helmet_m" src="img/helmet_matte.png" alt="Street FX Pro helmet">
           <img id="helmet-w" class="const__helmet const__helmet_w" src="img/helmet_white.png" alt="Street FX Pro helmet">
-          <img id="visor-g-1" class="const__visor" src="img/visors-green/visor-1.png" alt="Street FX Pro visor">
-          <img id="visor-g-2" class="const__visor" src="img/visors-green/visor-2.png" alt="Street FX Pro visor">
-          <img id="visor-g-3" class="const__visor" src="img/visors-green/visor-3.png" alt="Street FX Pro visor">
-          <img id="visor-g-4" class="const__visor" src="img/visors-green/visor-4.png" alt="Street FX Pro visor">
-          <img id="visor-g-5" class="const__visor" src="img/visors-green/visor-5.png" alt="Street FX Pro visor">
-          <img id="visor-g-6" class="const__visor" src="img/visors-green/visor-6.png" alt="Street FX Pro visor">
-          <img id="visor-w-1" class="const__visor" src="img/visors-white/visor-1.png" alt="Street FX Pro visor">
-          <img id="visor-w-2" class="const__visor" src="img/visors-white/visor-2.png" alt="Street FX Pro visor">
-          <img id="visor-w-3" class="const__visor" src="img/visors-white/visor-3.png" alt="Street FX Pro visor">
-          <img id="visor-w-4" class="const__visor" src="img/visors-white/visor-4.png" alt="Street FX Pro visor">
-          <img id="visor-w-5" class="const__visor" src="img/visors-white/visor-5.png" alt="Street FX Pro visor">
-          <img id="visor-w-6" class="const__visor" src="img/visors-white/visor-6.png" alt="Street FX Pro visor">
+          <img id="visor-1" class="const__visor" src="img/visor-1.png" alt="Street FX Pro visor">
+          <img id="visor-2" class="const__visor" src="img/visor-2.png" alt="Street FX Pro visor">
+          <img id="visor-3" class="const__visor" src="img/visor-3.png" alt="Street FX Pro visor">
+          <img id="visor-4" class="const__visor" src="img/visor-4.png" alt="Street FX Pro visor">
+          <img id="visor-5" class="const__visor" src="img/visor-5.png" alt="Street FX Pro visor">
+          <img id="visor-6" class="const__visor" src="img/visor-6.png" alt="Street FX Pro visor">
           <img id="holder-1" src="img/holder_1.png" alt="" class="const__holder">
           <img id="holder-2" src="img/holder_2.png" alt="" class="const__holder">
           <img id="holder-3" src="img/holder_3.png" alt="" class="const__holder">
@@ -133,29 +127,29 @@
           <div class="custom__opt-heading">Visor colour</div>
           <div class="custom__opt-list">
             <div id="option-visor-2" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-2.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-2.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Menacing Tint</div>
             </div>
             <div id="option-visor-4" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-4.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-4.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Chamaelon iridium</div>
             </div>
             <div id="option-visor-1" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-1.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-1.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Mirror Chrome</div>
             </div>
             <div id="option-visor-5" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-5.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-5.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Origin red</div>
               <div class="custom__opt-coming">Coming<br/> soon</div>
             </div>
             <div id="option-visor-6" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-6.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-6.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Gold</div>
               <div class="custom__opt-coming">Coming<br/> soon</div>
             </div>
             <div id="option-visor-3" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-3.png" alt="." class="custom__opt-img custom__opt-img_visor">
+              <img src="img/visor-3.png" alt="." class="custom__opt-img custom__opt-img_visor">
               <div class="custom__opt-name">Crystal Clear</div>
             </div>
           </div>
@@ -255,8 +249,6 @@
             <button class="sizes__button"><span>XLarge</span></button>
             <button class="sizes__button"><span>XXL</span></button>
           </div>
-          <div class="sizes__price">£ 229.99</div>
-          <button class="sizes__button-buy button"><span>Order now</span></button>
         </div>
         <div id="sizesHelmet" class="sizes__img">
           <img src="img/sizes-helmet.png" alt="Perfect and control street FX Pro helmet" class="sizes__helmet">
@@ -354,17 +346,17 @@
 
 <section class="about">
   <div id="aboutus" class="container">
-  <div id="aboutus" class="container">
-    <div class="about__prelog prelog">New culture</div>
-    <h2 class="about__heading">About our company</h2>
-    <div class="about__wrapper">
-      <p class="about__text">Based in London, UK, Matrix Helmets is on a mission to revolutionise the way you see motorcycle safety. We’re committed to bringing you a unique spin on quality safety wear, ushering out the aged, older style of bulky, cumbersome helmets, and bringing a modern, sleek new style when you’re riding your pride and joy, be it in the city or anywhere else! All of our specialiseddesigns are put through rigorous testing and exposed to our fully safety conscious philosophy. The end result that ends up in your hands is the result of perfect craftsmanship, and purpose built for any purpose imaginable. Whether it’s racing,travelling, or braving the elements, you can breathe easy, knowing every one of our helmets is providing you with nothing but top quality performance. After all, as a rider of such a fine power machine, it’s exactly what you deserve.</p>
-      <div class="about__philosophy">
-        <h3 class="about__phil-heading">Our philosophy</h3>
-        <div class="about__phil-text">We are a movement and safety is at the heart of this special movement. We want you to taste the best adventure! We are dedicated to guide, inspire and equip everyone to explore their own adventures.</div>
+    <div id="aboutus" class="container">
+      <div class="about__prelog prelog">New culture</div>
+      <h2 class="about__heading">About our company</h2>
+      <div class="about__wrapper">
+        <p class="about__text">Based in London, UK, Matrix Helmets is on a mission to revolutionise the way you see motorcycle safety. We’re committed to bringing you a unique spin on quality safety wear, ushering out the aged, older style of bulky, cumbersome helmets, and bringing a modern, sleek new style when you’re riding your pride and joy, be it in the city or anywhere else! All of our specialiseddesigns are put through rigorous testing and exposed to our fully safety conscious philosophy. The end result that ends up in your hands is the result of perfect craftsmanship, and purpose built for any purpose imaginable. Whether it’s racing,travelling, or braving the elements, you can breathe easy, knowing every one of our helmets is providing you with nothing but top quality performance. After all, as a rider of such a fine power machine, it’s exactly what you deserve.</p>
+        <div class="about__philosophy">
+          <h3 class="about__phil-heading">Our philosophy</h3>
+          <div class="about__phil-text">We are a movement and safety is at the heart of this special movement. We want you to taste the best adventure! We are dedicated to guide, inspire and equip everyone to explore their own adventures.</div>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 
 <footer class="footer">
@@ -411,6 +403,10 @@
     </div>
   </div>
 </footer>
+
+<!-- 
+
+ -->
 
 <script src="bundle.js"></script>
 </body>

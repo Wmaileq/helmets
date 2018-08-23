@@ -17,24 +17,16 @@ function scrollToElement(element) {
     window.scrollTo({top: position, behavior: 'smooth'})
 }
 
-new WOW().init();
-
 const constructor = {
     helmetM: document.getElementById('helmet-m'),
     helmetG: document.getElementById('helmet-g'),
     helmetW: document.getElementById('helmet-w'),
-    visorG1: document.getElementById('visor-g-1'),
-    visorG2: document.getElementById('visor-g-2'),
-    visorG3: document.getElementById('visor-g-3'),
-    visorG4: document.getElementById('visor-g-4'),
-    visorG5: document.getElementById('visor-g-5'),
-    visorG6: document.getElementById('visor-g-6'),
-    visorW1: document.getElementById('visor-w-1'),
-    visorW2: document.getElementById('visor-w-2'),
-    visorW3: document.getElementById('visor-w-3'),
-    visorW4: document.getElementById('visor-w-4'),
-    visorW5: document.getElementById('visor-w-5'),
-    visorW6: document.getElementById('visor-w-6'),
+    visor1: document.getElementById('visor-1'),
+    visor2: document.getElementById('visor-2'),
+    visor3: document.getElementById('visor-3'),
+    visor4: document.getElementById('visor-4'),
+    visor5: document.getElementById('visor-5'),
+    visor6: document.getElementById('visor-6'),
     holder1: document.getElementById('holder-1'),
     holder2: document.getElementById('holder-2'),
     holder3: document.getElementById('holder-3'),
@@ -47,12 +39,12 @@ const constructor = {
     holderChosen: false,
     playStartingAnimation : function() {
         this.helmetG.classList += ' visible animation-start';
-        setTimeout(() => this.visorG5.classList += ' visible visor-1 animation-start', 700);
-        setTimeout(() => this.visorG2.classList += ' visible visor-2 animation-start', 1000);
-        setTimeout(() => this.visorG4.classList += ' visible visor-3 animation-start', 1300);
-        setTimeout(() => this.visorG3.classList += ' visible visor-4 animation-start', 1600);
-        setTimeout(() => this.visorG6.classList += ' visible visor-5 animation-start', 1900);
-        setTimeout(() => this.visorG1.classList += ' visible visor-6 animation-start', 2200);
+        setTimeout(() => this.visor5.classList += ' visible visor-1 animation-start', 700);
+        setTimeout(() => this.visor2.classList += ' visible visor-2 animation-start', 1000);
+        setTimeout(() => this.visor4.classList += ' visible visor-3 animation-start', 1300);
+        setTimeout(() => this.visor3.classList += ' visible visor-4 animation-start', 1600);
+        setTimeout(() => this.visor6.classList += ' visible visor-5 animation-start', 1900);
+        setTimeout(() => this.visor1.classList += ' visible visor-6 animation-start', 2200);
         setTimeout(() => this.holder1.classList += ' visible holder-1 animation-start', 700);
         setTimeout(() => this.holder2.classList += ' visible holder-2 animation-start', 1060);
         setTimeout(() => this.holder3.classList += ' visible holder-3 animation-start', 1420);
@@ -102,8 +94,7 @@ const constructor = {
         this.resetAll('visor');
         document.getElementById('option-visor-' + visor).classList += ' chosen';
         document.getElementById('chosen-visor').innerText = document.getElementById('option-visor-' + visor).querySelector('.custom__opt-name').innerText;
-        visor = this.helmetChosen === 'helmetG' ? 'visorG' + visor : 'visorW' + visor;
-        this[visor].classList += ' visible visor-chosen';
+        this['visor' + visor].classList += ' visible visor-chosen';
         this.visorChosen = true;
     },
     chooseHolder: function(holder) {
@@ -145,11 +136,11 @@ let visitAnimationPlayed = false;
 
 function doSomething(scroll_pos) {
     if (!scrollArrowVisible && scroll_pos > 100) {
-        document.getElementById('arrowToTop').classList.value += ' visible';
+        document.getElementById('arrowToTop').classList.value += ' visibleArr';
         document.getElementById('arrowToTop').classList.remove('invisible');
         scrollArrowVisible = true;
     } else if (scrollArrowVisible && scroll_pos<= 100) {
-        document.getElementById('arrowToTop').classList.remove('visible');
+        document.getElementById('arrowToTop').classList.remove('visibleArr');
         document.getElementById('arrowToTop').classList.value += ' invisible';
         scrollArrowVisible = false
     }
