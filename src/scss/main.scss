@@ -59,7 +59,14 @@ body {
 .container {
   position: relative;
   margin: 0 auto;
-  width: 1280px;
+  width: 100%;
+  padding-left: 45px;
+  padding-right: 45px;
+  @media (min-width: 1310px) {
+    width: 1280px;
+    padding-left: 0;
+    padding-right: 0; 
+  }
 }
 
 h1 {
@@ -69,6 +76,9 @@ h1 {
   font-size: 50px;
   font-style: italic;
   font-weight: 300;
+  @media (max-width: 1310px) {
+    font-size: calc(32px + (100vw - 768px)*18/542);
+  }
 }
 
 h2 {
@@ -83,6 +93,9 @@ h2 {
   font-family: KaushanScript, serif;
   font-size: 36px;
   font-style: italic;
+  @media (max-width: 1310px) {
+    font-size: calc(24px + (100vw - 768px)*12/542);
+  }
 }
 
 .button {
@@ -102,6 +115,9 @@ h2 {
   text-transform: uppercase;
   cursor: pointer;
   transition: background-size 0.15s;
+  @media (max-width: 1310px) {
+    width: calc(173px + (100vw - 768px)*50/542);
+  }
   &:hover {
     background-color: #dc1a1a;
     &:after {

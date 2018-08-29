@@ -198,12 +198,20 @@ window.addEventListener('scroll', function() {
 function modalShow(){
     document.getElementById('modal').classList.value += ' active';
     let helmet = constructor[constructor.helmetChosen].cloneNode();
-    helmet.classList='';
+    helmet.classList='modal__helmet';
     let visor = constructor[constructor.visorChosen].cloneNode();
-    visor.classList='';
+    visor.classList='modal__visor';
     let holder = constructor[constructor.holderChosen].cloneNode();
-    holder.classList='';
-    document.getElementById('modalHelmet').append(helmet)
-    document.getElementById('modalHelmet').append(visor)
-    document.getElementById('modalHelmet').append(holder)
+    holder.classList='modal__holder';
+    let wrapper = document.getElementById('modalHelmet');
+    while (wrapper.firstChild) {
+        wrapper.removeChild(wrapper.firstChild);
+    }
+    wrapper.append(helmet)
+    wrapper.append(visor)
+    wrapper.append(holder)
+}
+
+function modalClose(){
+    document.getElementById('modal').classList.remove('active');
 }

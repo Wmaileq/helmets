@@ -1,12 +1,12 @@
 .header {
   position: relative;
   width: 100%;
-  height: 1205px;
   background: url('img/header-bg.jpg') center center no-repeat;
   background-size: cover;
   overflow: hidden;
   &__container {
     height: 100%;
+    padding-bottom: 513px;
     &:before {
       content: '';
       position: absolute;
@@ -46,12 +46,27 @@
     position: relative;
     z-index: 1;
     display: flex;
-
+    @media (max-width: 1310px) {
+      justify-content: space-between;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__text {
     padding-top: 55px;
     padding-left: 6px;
     width: 480px;
+    @media (max-width: 1310px) {
+      width: calc(300px + (100vw - 768px)*180/542);
+      padding-top: calc(25px + (100vw - 768px)*30/542);
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
   }
 
   &__prelog {
@@ -72,10 +87,20 @@
     letter-spacing: 0.6px;
     font-weight: 300;
     color: #7c8c9b;
+    @media (max-width: 1310px) {
+      width: 90%;
+      font-size: calc(14px + (100vw - 768px)*2/542);
+    }
+    @media (max-width: 1050px) {
+      margin-bottom: 60px;
+    }
   }
   &__image {
     position: relative;
     width: calc(100% - 480px);
+    @media (max-width: 1310px) {
+      width: calc(100% - 600px);
+    }
   }
 
   &__helmet {
@@ -87,6 +112,12 @@
     height: 946px;
     background: url('img/header-helmet.png') center center no-repeat;
     background-size: cover;
+    @media (max-width: 1310px) {
+      top: calc(-20px - (100vw - 768px)*121/542);
+      right: calc(-80px - (100vw - 768px)*136/542);
+      width: calc(499px + (100vw - 768px)*379/542);
+      height: calc(538px + (100vw - 768px)*408/542);
+    }
   }
 
   &__customize {

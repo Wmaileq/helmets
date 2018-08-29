@@ -112,6 +112,9 @@
   width: 42px;
   height: 80px;
   cursor: pointer;
+  @media (max-width: 991px) {
+    left: 55px;
+  }
   &:hover {
     .nav-button__icon-side:before {
       animation: burger-icon-side_1 linear infinite 0.4s;
@@ -137,6 +140,11 @@
     font-weight: 300px;
     letter-spacing: 1.4px;
     color: #5c6772;
+    @media (max-width: 991px) {
+      right: -55px;
+      bottom: auto;
+      top: 20px;
+    }
   }
 
   &__icon-side {

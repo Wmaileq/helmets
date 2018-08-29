@@ -9,17 +9,48 @@
   align-items: center;
   justify-content: center;
   background-color: rgba(#0c0f11,0.82);
+  
   &.active {
     display: flex;
   }
   &__wrapper {
+    position: relative;
     display: flex;
     padding: 110px 100px 110px 120px;
     background: linear-gradient(to bottom right, #222528, #14191c);
+    &:after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 3px;
+      height: 114px;
+      background-color: #dc1a1a;
+   } 
   }
   &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     margin-right: 200px;
-    margin-top: auto;
+  }
+  &__helmet-wrapper {
+    position: relative;
+  }
+  &__helmet {
+    position: absolute;
+    top: -170px;
+    left: -170px;
+  }
+  &__visor {
+    position: absolute;
+    top: -3px;
+    left: -145px;
+  }
+  &__holder {
+    position: absolute;
+    top: 25px;
+    left: -140px;
   }
   &__heading {
     margin-bottom: 30px;

@@ -4,9 +4,87 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Streetfighter helmet re-designed by Matrix</title>
-  <link rel="stylesheet" href="bundle.css">
+  <style>
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 10000;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      width: 100%;
+      height: 100vh;
+      justify-content: center;
+      -ms-align-items: center;
+      align-items: center;
+      background: linear-gradient(to right, #222528, #14191c);
+      -webkit-transition: opacity 0.3s;
+      -o-transition: opacity 0.3s;
+      transition: opacity 0.3s;
+    }
+    .preloader__circle {
+      position: relative;
+      display: -webkit-flex;
+      display: -moz-flex;
+      display: -ms-flex;
+      display: -o-flex;
+      display: flex;
+      -ms-align-items: center;
+      align-items: center;
+      justify-content: center;
+      width: 80vh;
+      height: 80vh;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255, 0.2);
+    }
+    .preloader__circle:after {
+      content: '';
+      position: absolute;
+      z-index: 0;
+      left: 5vh;
+      width: 70vh;
+      height: 70vh;
+      border-radius: 50%;
+      background-color: #dc1a1a;
+    }
+    .preloader__circle:before {
+      content: '';
+      position: absolute;
+      height: 100%;
+      width: 100%;
+      border-top: 2px solid rgba(255,255,255, 0.5);
+      border-radius: 50%;
+      animation: preloader infinite 2s ease;
+    }
+    .preloader__helmet {
+      top: -2vh;
+      position: absolute;
+      height: 100vh;
+      z-index: 1;
+    }
+    @keyframes preloader {
+      0% {
+        transform: rotate(0deg)
+      }
+      100% {
+        transform: rotate(360deg)
+      }
+    }
+  </style>
+  
 </head>
 <body>
+  <script>
+    document.body.style.overflow = "hidden";
+  </script>
+<div id="preloader" class="preloader">
+  <div class="preloader__circle">
+  <img  class="preloader__helmet" src="img/question-helmet.png" alt="Street fx pro preloader">    
+  </div>
+</div>
 
 <div id="arrowToTop" onclick="scrollToElement(0)" class="arrow-top"></div>
 <nav id="nav" class="nav">
@@ -406,13 +484,14 @@
 
 <div class="modal" id="modal">
   <div class="modal__wrapper">
+    <div class="nav__close" onclick="modalClose()"></div>
     <div class="modal__left">
-      <div id="modalHelmet" class="modal__helmet">
+      <div id="modalHelmet" class="modal__helmet-wrapper">
         
       </div>
       <div class="custom__category">Your style</div>
         <div class="custom__props modal__props">
-          <div class="custom__propp">
+          <div class="custom__prop">
             <span class="custom__prop-key">Helmet:</span>
             <span class="custom__prop-fill"></span>
             <span id="chosen-helmet-modal" class="custom__prop-value">Army Green</span>
@@ -448,7 +527,16 @@
     </div>
   </div>
 </div>
-
+<link rel="stylesheet" href="bundle.css">
 <script src="bundle.js"></script>
+<script>
+  window.onload = function(){
+    document.getElementById('preloader').style.opacity = 0;
+    setTimeout(function(){
+      document.body.removeChild(document.getElementById('preloader'));
+      document.body.style.overflowY = 'auto';
+    }, 450)
+  }
+</script>
 </body>
 </html>
