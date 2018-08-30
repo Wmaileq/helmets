@@ -2,6 +2,9 @@
   position: relative;
   padding-top: 1060px;
   margin-top: -900px;
+  @media (max-width: 999px) {
+    padding-top: 860px;
+  }
   &:before {
     content: '';
     position: absolute;
@@ -24,6 +27,13 @@
   &__text {
     margin-top: -312px;
     padding-left: 715px;
+    @media (min-width: 1000px) and (max-width: 1200px) {
+      padding-left: calc(550px + (100vw - 768px)*165/432);
+    }
+    @media (max-width: 999px){
+      padding-left: 0;
+      text-align: center;
+    }
   }
   &__prelog {
     display: inline-block;
@@ -43,6 +53,13 @@
       background-size: cover;
       transform: rotate(30deg);
       opacity: 0.2;
+      @media (max-width: 999px){
+        left: auto;
+        transform: rotate(30deg) translateX(-100px)
+      }
+      @media (max-width: 500px) {
+        display: none;
+      }
     }
   }
   &__desc {
@@ -52,5 +69,8 @@
     font-size: 16px;
     line-height: 30px;
     letter-spacing: 0.6px;
+    @media (max-width: 999px) {
+      margin: 30px auto;
+    }
   }
 }
