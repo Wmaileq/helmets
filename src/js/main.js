@@ -49,6 +49,7 @@ const constructor = {
     helmetChosen: 'helmetM',
     visorChosen: 'visor2',
     holderChosen: 'holder7',
+    sizeChosen: 'XS',
     playStartingAnimation : function() {
         this.helmetG.classList += ' visible animation-start';
         setTimeout(() => this.visor5.classList += ' visible visor-1 animation-start', 700);
@@ -156,11 +157,11 @@ function doSomething(scroll_pos) {
         document.getElementById('arrowToTop').classList.value += ' invisible';
         scrollArrowVisible = false
     }
-    if (!constructorAnimationPlayed && scroll_pos > document.getElementById('customization').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 230) {
+    if (!constructorAnimationPlayed && scroll_pos > document.getElementById('customization').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 380) {
         constructor.playStartingAnimation();
         constructorAnimationPlayed = true;
     }
-    if (!evolutionHelmetAnimationPlayed && scroll_pos > document.getElementById('evolution').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 300) {
+    if (!evolutionHelmetAnimationPlayed && scroll_pos > document.getElementById('evolution').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 380) {
         document.getElementById('evolutionHelmet').classList.value += ' slideInRightBottom';
         document.getElementById('evolutionFour').classList.value += ' zoomIn';
         evolutionHelmetAnimationPlayed = true
@@ -170,7 +171,7 @@ function doSomething(scroll_pos) {
         document.getElementById('noiseText').classList.value += ' animated';
         noiseAnimationPlayed = true
     }
-    if (!sizesAnimationPlayed && scroll_pos > document.getElementById('sizesWrapper').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 350) {
+    if (!sizesAnimationPlayed && scroll_pos > document.getElementById('sizesWrapper').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 400) {
         document.getElementById('sizesButtons').classList.value += ' animated';
         document.getElementById('sizesHelmet').classList.value += ' animated';
         sizesAnimationPlayed = true
@@ -222,6 +223,12 @@ function modalShow(){
     wrapper.append(helmet)
     wrapper.append(visor)
     wrapper.append(holder)
+}
+
+function changeSize(size){
+    constructor.sizeChosen=size;
+    document.querySelectorAll('.modal__button_active')[0].classList.remove('modal__button_active')
+    document.getElementById('button'+size).classList +=  ' modal__button_active'
 }
 
 function modalClose(){

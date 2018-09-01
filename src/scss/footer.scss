@@ -7,6 +7,9 @@
   @media (max-width: 1000px) {
     margin-top: -150px;
   }
+  @media (max-width: 767px) {
+    padding-bottom: 40px;
+  }
   &__wrapper {
     display: flex;
     @media (max-width: 1050px) {

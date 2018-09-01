@@ -40,6 +40,12 @@
             border-radius: 50%;
             border: 1px solid rgba(255,255,255, 0.2);
         }
+        @media (max-width: 767px) {
+            .preloader__circle {
+                width: 80vw;
+                height: 80vw;
+            }
+        }
         .preloader__circle:after {
             content: '';
             position: absolute;
@@ -49,6 +55,13 @@
             height: 70vh;
             border-radius: 50%;
             background-color: #dc1a1a;
+        }
+        @media (max-width: 767px) {
+            .preloader__circle:after {
+                left: 5vw;
+                width: 70vw;
+                height: 70vw;
+            }
         }
         .preloader__circle:before {
             content: '';
@@ -64,6 +77,13 @@
             position: absolute;
             height: 100vh;
             z-index: 1;
+        }
+        @media (max-width: 767px) {
+            .preloader__helmet {
+                width: 110%;
+                transform: translateY(20px);
+                height: auto;
+            }
         }
         @keyframes preloader {
             0% {
@@ -523,12 +543,12 @@
                 <div class="modal__buttons-wrapper">
                     <div class="modal__hint">Choose your size:</div>
                     <div class="modal__buttons">
-                        <button class="modal__button modal__button_active"><span>XS</span></button>
-                        <button class="modal__button"><span>Small</span></button>
-                        <button class="modal__button"><span>Medium</span></button>
-                        <button class="modal__button"><span>Large</span></button>
-                        <button class="modal__button"><span>XLarge</span></button>
-                        <button class="modal__button"><span>XXL</span></button>
+                        <button id="buttonxs" onclick="changeSize('xs')" class="modal__button modal__button_active"><span>XS</span></button>
+                        <button id="buttonS" onclick="changeSize('S')" class="modal__button"><span>Small</span></button>
+                        <button id="buttonM" onclick="changeSize('M')" class="modal__button"><span>Medium</span></button>
+                        <button id="buttonL" onclick="changeSize('L')" class="modal__button"><span>Large</span></button>
+                        <button id="buttonXL" onclick="changeSize('XL')" class="modal__button"><span>XLarge</span></button>
+                        <button id="buttonXXL" onclick="changeSize('XXL')" class="modal__button"><span>XXL</span></button>
                     </div>
                 </div>
             </div>
