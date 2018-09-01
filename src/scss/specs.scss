@@ -4,9 +4,19 @@
   padding-bottom: 430px;
   background: url('img/scratch-bg.jpg') center center no-repeat;
   background-size: cover;
+  @media (max-width: 950px) {
+    padding-top: 350px;
+  }
+  @media (max-width: 767px) {
+    padding-bottom: 550px;
+  }
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
     &_top {
       margin-bottom: 80px;
     }
@@ -15,6 +25,42 @@
     position: relative;
     width: 560px;
     opacity: 0;
+    @media (max-width: 1150px) {
+      transform: scale(0.9);
+    }
+    @media (max-width: 1050px) {
+      transform: scale(0.8);
+    }
+    @media (max-width: 950px) {
+      margin-left: -50px;
+    }
+    @media (max-width: 850px) {
+      transform: scale(0.65);
+      margin-top: -100px;
+    }
+    @media (max-width: 650px) {
+      margin-top: 0;
+      transform: scale(0.6);
+    }
+    @media (max-width: 600px) {
+      transform: scale(0.55);
+    }
+    @media (max-width: 550px) {
+      margin-top: 40px;
+      transform: scale(0.50);
+    }
+    @media (max-width: 500px) {
+      margin-top: 60px;
+      transform: scale(0.45);
+    }
+    @media (max-width: 500px) {
+      margin-top: 70px;
+      transform: scale(0.4);
+    }
+    @media (max-width: 420px) {
+      margin-top: 80px;
+      transform: scale(0.35);
+    }
     &.animated {
       opacity: 1;
       animation: slideInLeft 1.25s ease;
@@ -34,6 +80,22 @@
   &__text {
     padding-top: 310px;
     width: 640px;
+    @media (max-width: 1366px) {
+      width: calc(270px + (100vw - 768px)*320/580);
+      padding-top: calc(50px + (100vw - 768px)*260/600;
+    }
+    @media (max-width: 850px) {
+      width: 400px;
+    }
+    @media (max-width: 767px) {
+      padding-top: calc(280px + (100vw - 320px)*220/448);
+      &_2 {
+        padding-top: 350px;
+      }
+    }
+    @media (max-width: 500px) {
+      width: 100%;
+    }
   }
   &__prelog {
     margin-bottom: 15px;
@@ -66,6 +128,9 @@
     letter-spacing: 0.5px;
     color: #dc1a1a;
     font-style: italic;
+    @media (max-width: 1000px) {
+      padding-left: 90px;
+    }
     &_shower:before {
       content: '';
       position: absolute;
@@ -75,6 +140,9 @@
       height: 46px;
       background: url('img/icons/shower.svg') center center no-repeat;
       background-size: cover;
+      @media (max-width: 1000px) {
+        left: 0;
+      }
     }
     &_temperature:before {
       content: '';
@@ -85,7 +153,10 @@
       height: 57px;
       background: url('img/icons/temperature.svg') center center no-repeat;
       background-size: cover;
-      transform: rotate(-45deg)
+      transform: rotate(-45deg);
+      @media (max-width: 1000px) {
+        left: 0;
+      }
     }
   }
   &__icon-heading {
@@ -96,6 +167,9 @@
   }
   &__icon-text {
     width: 355px;
+    @media (max-width: 550px) {
+      width: 100%;
+    }
   }
 }
 @keyframes visor-lighting {

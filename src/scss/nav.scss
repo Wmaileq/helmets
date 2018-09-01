@@ -11,6 +11,10 @@
   transform: translateX(-480px);
   transition: transform 0.3s;
   transition-timing-function: ease;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding-left: 30px;
+  }
   &_active {
     transform: translateX(0);
   }

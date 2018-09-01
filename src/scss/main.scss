@@ -67,6 +67,10 @@ body {
     padding-left: 0;
     padding-right: 0; 
   }
+  @media (max-width: 767px) {
+    padding-left: 17px;
+    padding-right: 17px;
+  }
 }
 
 h1 {
@@ -174,6 +178,9 @@ h2 {
   cursor: pointer;
   opacity: 0;
   transform-origin: top right;
+  @media (max-width: 767px) {
+    display: none;
+  }
   &.visibleArr {
     opacity: 1;
     animation: arrowToTop ease 0.4s;

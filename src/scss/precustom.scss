@@ -23,6 +23,9 @@
     background: url('img/customization-bg.png') right top no-repeat;
     transform: skewY(3.4deg);
     opacity: 0.1;
+    @media (max-width: 767px) {
+      display: none;
+    }
   }
   &__text {
     margin-top: -312px;

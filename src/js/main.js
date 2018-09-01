@@ -17,6 +17,18 @@ function scrollToElement(element) {
     window.scrollTo({top: position, behavior: 'smooth'})
 }
 
+function nextStep(step){
+    if (step === 2) {
+        document.getElementById('step-1').classList.value = 'custom__opt-wrapper passed';
+        document.getElementById('step-2').classList.value = 'custom__opt-wrapper active';
+    }
+    if (step === 3) {
+        document.getElementById('step-2').classList.value = 'custom__opt-wrapper passed';
+        document.getElementById('step-3').classList.value = 'custom__opt-wrapper active';
+        document.getElementById('final-step').classList.value = 'custom__mobile-style active'
+    }
+}
+
 const constructor = {
     helmetM: document.getElementById('helmet-m'),
     helmetG: document.getElementById('helmet-g'),
@@ -180,7 +192,7 @@ function doSomething(scroll_pos) {
         document.getElementById('visitHelmet2').classList.value += ' animated';
         document.getElementById('visitHelmet3').classList.value += ' animated';
         document.getElementById('visitHelmet4').classList.value += ' animated';
-        specsAnimationPlayed = true
+        visitAnimationPlayed = true
     }
 }
 
