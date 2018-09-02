@@ -1,417 +1,571 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Streetfighter helmet re-designed by Matrix</title>
-  <link rel="stylesheet" href="bundle.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Streetfighter helmet re-designed by Matrix</title>
+    <style>
+        .preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10000;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            width: 100%;
+            height: 100vh;
+            justify-content: center;
+            -ms-align-items: center;
+            align-items: center;
+            background: linear-gradient(to right, #222528, #14191c);
+            -webkit-transition: opacity 0.3s;
+            -o-transition: opacity 0.3s;
+            transition: opacity 0.3s;
+        }
+        .preloader__circle {
+            position: relative;
+            display: -webkit-flex;
+            display: -moz-flex;
+            display: -ms-flex;
+            display: -o-flex;
+            display: flex;
+            -ms-align-items: center;
+            align-items: center;
+            justify-content: center;
+            width: 80vh;
+            height: 80vh;
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255, 0.2);
+        }
+        @media (max-width: 767px) {
+            .preloader__circle {
+                width: 80vw;
+                height: 80vw;
+            }
+        }
+        .preloader__circle:after {
+            content: '';
+            position: absolute;
+            z-index: 0;
+            left: 5vh;
+            width: 70vh;
+            height: 70vh;
+            border-radius: 50%;
+            background-color: #dc1a1a;
+        }
+        @media (max-width: 767px) {
+            .preloader__circle:after {
+                left: 5vw;
+                width: 70vw;
+                height: 70vw;
+            }
+        }
+        .preloader__circle:before {
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            border-top: 2px solid rgba(255,255,255, 0.5);
+            border-radius: 50%;
+            animation: preloader infinite 2s ease;
+        }
+        .preloader__helmet {
+            top: -2vh;
+            position: absolute;
+            height: 100vh;
+            z-index: 1;
+        }
+        @media (max-width: 767px) {
+            .preloader__helmet {
+                width: 110%;
+                transform: translateY(20px);
+                height: auto;
+            }
+        }
+        @keyframes preloader {
+            0% {
+                transform: rotate(0deg)
+            }
+            100% {
+                transform: rotate(360deg)
+            }
+        }
+    </style>
+
 </head>
 <body>
+<script>
+    document.body.style.overflow = "hidden";
+</script>
+<div id="preloader" class="preloader">
+    <div class="preloader__circle">
+        <img  class="preloader__helmet" src="img/question-helmet.png" alt="Street fx pro preloader">
+    </div>
+</div>
 
 <div id="arrowToTop" onclick="scrollToElement(0)" class="arrow-top"></div>
 <nav id="nav" class="nav">
-  <div onclick="scrollToElement('customization')" class="nav__link">Customization</div>
-  <div onclick="scrollToElement('evolution')" class="nav__link">Features</div>
-  <div onclick="scrollToElement('sizes')" class="nav__link">Size range</div>
-  <div onclick="scrollToElement('specs')" class="nav__link">Specifications</div>
-  <div onclick="scrollToElement('contact')" class="nav__link">Contact</div>
-  <div onclick="scrollToElement('aboutus')" class="nav__link">About company</div>
-  <a href="https://www.matrixhelmets.com/" target="_blank" class="nav__link">Visit official website</a>
-  <a href="https://www.matrixhelmets.com/contact/?id=faq" target="_blank" class="nav__link">Returns</a>
-  <span class="nav__close" onclick="toggleMenu()"></span>
+    <div onclick="scrollToElement('customization')" class="nav__link">Customization</div>
+    <div onclick="scrollToElement('evolution')" class="nav__link">Features</div>
+    <div onclick="scrollToElement('sizes')" class="nav__link">Size range</div>
+    <div onclick="scrollToElement('specs')" class="nav__link">Specifications</div>
+    <div onclick="scrollToElement('contact')" class="nav__link">Contact</div>
+    <div onclick="scrollToElement('aboutus')" class="nav__link">About company</div>
+    <a href="https://www.matrixhelmets.com/" target="_blank" class="nav__link">Visit official website</a>
+    <a href="https://www.matrixhelmets.com/contact/?id=faq" target="_blank" class="nav__link">Returns</a>
+    <span class="nav__close" onclick="toggleMenu()"></span>
 </nav>
 
 <div class="nav-button" onclick="toggleMenu()">
-  <span class="nav-button__text">Menu</span>
-  <div class="nav-button__icon-side nav-button__icon-side_top"></div>
-  <div class="nav-button__icon-center">
-    <span class="pseudo-helper"></span>
-  </div>
-  <div class="nav-button__icon-side nav-button__icon-side_bottom"></div>
+    <span class="nav-button__text">Menu</span>
+    <div class="nav-button__icon-side nav-button__icon-side_top"></div>
+    <div class="nav-button__icon-center">
+        <span class="pseudo-helper"></span>
+    </div>
+    <div class="nav-button__icon-side nav-button__icon-side_bottom"></div>
 </div>
 
 <header class="header">
-  <div class="container header__container">
-    <div class="header__letters"></div>
-    <div class="header__logo-wrapper">
-      <a href="#" class="header__logo"></a>
+    <div class="container header__container">
+        <div class="header__letters"></div>
+        <div class="header__logo-wrapper">
+            <a href="#" class="header__logo"></a>
+        </div>
+        <div class="header__wrapper">
+            <div class="header__text">
+                <div class="header__prelog prelog">Street FX pro</div>
+                <h1 class="header__heading">Streetfighter helmet <nobr>re-designed</nobr></h1>
+                <p class="header__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
+                <button class="header__button button" onclick="scrollToElement('evolution')"><span>Discover</span></button>
+            </div>
+            <div class="header__image">
+                <div class="header__helmet"></div>
+                <button class="header__customize" onclick="scrollToElement('customization')">Customize</button>
+            </div>
+        </div>
     </div>
-    <div class="header__wrapper">
-      <div class="header__text">
-        <div class="header__prelog prelog">Street FX pro</div>
-        <h1 class="header__heading">Streetfighter helmet <nobr>re-designed</nobr></h1>
-        <p class="header__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
-        <button class="header__button button"><span>Discover</span></button>
-      </div>
-      <div class="header__image">
-        <div class="header__helmet"></div>
-        <button class="header__customize" onclick="scrollToElement('customization')">Customize</button>
-      </div>
-    </div>
-  </div>
 </header>
 
 <section class="precustom">
-  <div id="customization" class="container">
-    <div class="precustom__text">
-      <div class="precustom__prelog prelog">Choose your style</div>
-      <h2 class="precustom__heading">The devil<br/> is in the detail</h2>
-      <p class="precustom__desc">Design your helmet style from options below</p>
+    <div id="customization" class="container">
+        <div class="precustom__text">
+            <div class="precustom__prelog prelog">Choose your style</div>
+            <h2 class="precustom__heading">The devil<br/> is in the detail</h2>
+            <p class="precustom__desc">Design your helmet style from options below</p>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="custom">
-  <div class="container">
-    <div class="custom__constructor">
-      <div class="custom__result">
-        <div id="custom-image" class="custom__image">
-          <img id="helmet-g" class="const__helmet const__helmet_g" src="img/helmet_green.png" alt="Street FX Pro helmet">
-          <img id="helmet-m" class="const__helmet const__helmet_m" src="img/helmet_matte.png" alt="Street FX Pro helmet">
-          <img id="helmet-w" class="const__helmet const__helmet_w" src="img/helmet_white.png" alt="Street FX Pro helmet">
-          <img id="visor-g-1" class="const__visor" src="img/visors-green/visor-1.png" alt="Street FX Pro visor">
-          <img id="visor-g-2" class="const__visor" src="img/visors-green/visor-2.png" alt="Street FX Pro visor">
-          <img id="visor-g-3" class="const__visor" src="img/visors-green/visor-3.png" alt="Street FX Pro visor">
-          <img id="visor-g-4" class="const__visor" src="img/visors-green/visor-4.png" alt="Street FX Pro visor">
-          <img id="visor-g-5" class="const__visor" src="img/visors-green/visor-5.png" alt="Street FX Pro visor">
-          <img id="visor-g-6" class="const__visor" src="img/visors-green/visor-6.png" alt="Street FX Pro visor">
-          <img id="visor-w-1" class="const__visor" src="img/visors-white/visor-1.png" alt="Street FX Pro visor">
-          <img id="visor-w-2" class="const__visor" src="img/visors-white/visor-2.png" alt="Street FX Pro visor">
-          <img id="visor-w-3" class="const__visor" src="img/visors-white/visor-3.png" alt="Street FX Pro visor">
-          <img id="visor-w-4" class="const__visor" src="img/visors-white/visor-4.png" alt="Street FX Pro visor">
-          <img id="visor-w-5" class="const__visor" src="img/visors-white/visor-5.png" alt="Street FX Pro visor">
-          <img id="visor-w-6" class="const__visor" src="img/visors-white/visor-6.png" alt="Street FX Pro visor">
-          <img id="holder-1" src="img/holder_1.png" alt="" class="const__holder">
-          <img id="holder-2" src="img/holder_2.png" alt="" class="const__holder">
-          <img id="holder-3" src="img/holder_3.png" alt="" class="const__holder">
-          <img id="holder-4" src="img/holder_4.png" alt="" class="const__holder">
-          <img id="holder-5" src="img/holder_5.png" alt="" class="const__holder">
-          <img id="holder-6" src="img/holder_6.png" alt="" class="const__holder">
-          <img id="holder-7" src="img/holder_7.png" alt="" class="const__holder">
+    <div class="container">
+        <div class="custom__constructor">
+            <div class="custom__result">
+                <div id="custom-image" class="custom__image">
+                    <img id="helmet-g" class="const__helmet const__helmet_g" src="img/helmet_green.png" alt="Street FX Pro helmet">
+                    <img id="helmet-m" class="const__helmet const__helmet_m" src="img/helmet_matte.png" alt="Street FX Pro helmet">
+                    <img id="helmet-w" class="const__helmet const__helmet_w" src="img/helmet_white.png" alt="Street FX Pro helmet">
+                    <img id="visor-1" class="const__visor" src="img/visor-1.png" alt="Street FX Pro visor">
+                    <img id="visor-2" class="const__visor" src="img/visor-2.png" alt="Street FX Pro visor">
+                    <img id="visor-3" class="const__visor" src="img/visor-3.png" alt="Street FX Pro visor">
+                    <img id="visor-4" class="const__visor" src="img/visor-4.png" alt="Street FX Pro visor">
+                    <img id="visor-5" class="const__visor" src="img/visor-5.png" alt="Street FX Pro visor">
+                    <img id="visor-6" class="const__visor" src="img/visor-6.png" alt="Street FX Pro visor">
+                    <img id="holder-1" src="img/holder_1.png" alt="" class="const__holder">
+                    <img id="holder-2" src="img/holder_2.png" alt="" class="const__holder">
+                    <img id="holder-3" src="img/holder_3.png" alt="" class="const__holder">
+                    <img id="holder-4" src="img/holder_4.png" alt="" class="const__holder">
+                    <img id="holder-5" src="img/holder_5.png" alt="" class="const__holder">
+                    <img id="holder-6" src="img/holder_6.png" alt="" class="const__holder">
+                    <img id="holder-7" src="img/holder_7.png" alt="" class="const__holder">
+                </div>
+                <div id="final-step" class="custom__mobile-style">
+                    <div class="custom__category">Your style</div>
+                    <div class="custom__props">
+                        <div class="custom__prop">
+                            <span class="custom__prop-key">Helmet:</span>
+                            <span class="custom__prop-fill"></span>
+                            <span id="chosen-helmet" class="custom__prop-value">Army Green</span>
+                        </div>
+                        <div class="custom__prop">
+                            <span class="custom__prop-key">Visor:</span>
+                            <span class="custom__prop-fill"></span>
+                            <span id="chosen-visor" class="custom__prop-value">Chamaelon Iridium</span>
+                        </div>
+                        <div class="custom__prop">
+                            <span class="custom__prop-key">Visor holders:</span>
+                            <span class="custom__prop-fill"></span>
+                            <span id="chosen-holder" class="custom__prop-value">Gold</span></div>
+                    </div>
+                    <div class="custom__price">£ 229.99</div>
+                    <button class="custom__button button" onclick="modalShow()"><span>Buy</span></button>
+                    <div class="custom__hint">With current options</div>
+                </div>
+            </div>
+            <div class="custom__options">
+                <div id="step-1" class="custom__opt-wrapper active">
+                    <div class="custom__opt-heading">Helmet colour</div>
+                    <div class="custom__opt-list">
+                        <div class="custom__mobile-heading"><span>Step-1:</span> Helmet colour</div>
+                        <div id="option-helmet-m" class="custom__opt-item">
+                            <img src="img/helmet_matte.png" alt="Helmet colour matte" class="custom__opt-img custom__opt-img_helmet">
+                            <div class="custom__opt-name">Matte Black</div>
+                        </div>
+                        <div id="option-helmet-g" class="custom__opt-item chosen">
+                            <img src="img/helmet_green.png" alt="Helmet colour green" class="custom__opt-img custom__opt-img_helmet">
+                            <div class="custom__opt-name">Army green</div>
+                            <div class="custom__opt-coming">Coming<br/> soon</div>
+                        </div>
+                        <div id="option-helmet-w" class="custom__opt-item">
+                            <img src="img/helmet_white.png" alt="Helmet colour white" class="custom__opt-img custom__opt-img_helmet">
+                            <div class="custom__opt-name">Brilliant white</div>
+                        </div>
+                        <div onclick="nextStep(2)" class="button custom__mobile-button"><span>Next Step</span></div>
+                    </div>
+                </div>
+                <div id="step-2" class="custom__opt-wrapper">
+                    <div class="custom__opt-heading">Visor colour</div>
+                    <div class="custom__opt-list">
+                        <div class="custom__mobile-heading"><span>Step-2:</span> Visor colour</div>
+                        <div id="option-visor-2" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-2.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Menacing Tint</div>
+                        </div>
+                        <div id="option-visor-4" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-4.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Chamaelon iridium</div>
+                        </div>
+                        <div id="option-visor-1" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-1.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Mirror Chrome</div>
+                        </div>
+                        <div id="option-visor-5" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-5.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Origin red</div>
+                            <div class="custom__opt-coming">Coming<br/> soon</div>
+                        </div>
+                        <div id="option-visor-6" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-6.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Gold</div>
+                            <div class="custom__opt-coming">Coming<br/> soon</div>
+                        </div>
+                        <div id="option-visor-3" class="custom__opt-item custom__opt-item_visor">
+                            <img src="img/visor-3.png" alt="." class="custom__opt-img custom__opt-img_visor">
+                            <div class="custom__opt-name">Crystal Clear</div>
+                        </div>
+                        <div onclick="nextStep(3)" class="button custom__mobile-button"><span>Next Step</span></div>
+                    </div>
+                </div>
+                <div id="step-3" class="custom__opt-wrapper">
+                    <div class="custom__opt-heading">Visour holders colour</div>
+                    <div class="custom__opt-list">
+                        <div class="custom__mobile-heading"><span>Final:</span> Holder Colour</div>
+                        <div id="option-holder-1" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_1.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Green</div>
+                        </div>
+                        <div id="option-holder-2" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_2.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Gold</div>
+                        </div>
+                        <div id="option-holder-3" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_3.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Iridium</div>
+                            <div class="custom__opt-coming">Coming<br/> soon</div>
+                        </div>
+                        <div id="option-holder-4" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_4.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Blue</div>
+                        </div>
+                        <div id="option-holder-5" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_5.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Chrome</div>
+                        </div>
+                        <div id="option-holder-6" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_6.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Red</div>
+                        </div>
+                        <div id="option-holder-7" class="custom__opt-item custom__opt-item_holder">
+                            <img src="img/holder_7.png" alt="." class="custom__opt-img custom__opt-img_holder">
+                            <div class="custom__opt-name custom__opt-name_holder">Black</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="custom__category">Your style</div>
-        <div class="custom__props">
-          <div class="custom__prop">
-            <span class="custom__prop-key">Helmet:</span>
-            <span class="custom__prop-fill"></span>
-            <span id="chosen-helmet" class="custom__prop-value">Army Green</span>
-          </div>
-          <div class="custom__prop">
-            <span class="custom__prop-key">Visor:</span>
-            <span class="custom__prop-fill"></span>
-            <span id="chosen-visor" class="custom__prop-value">Chamaelon Iridium</span>
-          </div>
-          <div class="custom__prop">
-            <span class="custom__prop-key">Visor holders:</span>
-            <span class="custom__prop-fill"></span>
-            <span id="chosen-holder" class="custom__prop-value">Gold</span></div>
-        </div>
-        <div class="custom__price">£ 229.99</div>
-        <button class="custom__button button"><span>Buy</span></button>
-        <div class="custom__hint">With current options</div>
-      </div>
-      <div class="custom__options">
-        <div class="custom__opt-wrapper">
-          <div class="custom__opt-heading">Helmet colour</div>
-          <div class="custom__opt-list">
-            <div id="option-helmet-m" class="custom__opt-item">
-              <img src="img/helmet_matte.png" alt="Helmet colour matte" class="custom__opt-img custom__opt-img_helmet">
-              <div class="custom__opt-name">Matte Black</div>
-            </div>
-            <div id="option-helmet-g" class="custom__opt-item chosen">
-              <img src="img/helmet_green.png" alt="Helmet colour green" class="custom__opt-img custom__opt-img_helmet">
-              <div class="custom__opt-name">Army green</div>
-              <div class="custom__opt-coming">Coming<br/> soon</div>
-            </div>
-            <div id="option-helmet-w" class="custom__opt-item">
-              <img src="img/helmet_white.png" alt="Helmet colour white" class="custom__opt-img custom__opt-img_helmet">
-              <div class="custom__opt-name">Brilliant white</div>
-            </div>
-          </div>
-        </div>
-        <div class="custom__opt-wrapper">
-          <div class="custom__opt-heading">Visor colour</div>
-          <div class="custom__opt-list">
-            <div id="option-visor-2" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-2.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Menacing Tint</div>
-            </div>
-            <div id="option-visor-4" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-4.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Chamaelon iridium</div>
-            </div>
-            <div id="option-visor-1" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-1.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Mirror Chrome</div>
-            </div>
-            <div id="option-visor-5" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-5.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Origin red</div>
-              <div class="custom__opt-coming">Coming<br/> soon</div>
-            </div>
-            <div id="option-visor-6" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-6.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Gold</div>
-              <div class="custom__opt-coming">Coming<br/> soon</div>
-            </div>
-            <div id="option-visor-3" class="custom__opt-item custom__opt-item_visor">
-              <img src="img/visors-white/visor-3.png" alt="." class="custom__opt-img custom__opt-img_visor">
-              <div class="custom__opt-name">Crystal Clear</div>
-            </div>
-          </div>
-        </div>
-        <div class="custom__opt-wrapper">
-          <div class="custom__opt-heading">Visour holders colour</div>
-          <div class="custom__opt-list">
-            <div id="option-holder-1" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_1.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Green</div>
-            </div>
-            <div id="option-holder-2" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_2.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Gold</div>
-            </div>
-            <div id="option-holder-3" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_3.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Iridium</div>
-              <div class="custom__opt-coming">Coming<br/> soon</div>
-            </div>
-            <div id="option-holder-4" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_4.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Blue</div>
-            </div>
-            <div id="option-holder-5" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_5.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Chrome</div>
-            </div>
-            <div id="option-holder-6" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_6.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Red</div>
-            </div>
-            <div id="option-holder-7" class="custom__opt-item custom__opt-item_holder">
-              <img src="img/holder_7.png" alt="." class="custom__opt-img custom__opt-img_holder">
-              <div class="custom__opt-name custom__opt-name_holder">Black</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
 </section>
 
 <section class="evolution">
-  <div id="evolution" class="container">
-    <div class="evolution__wrapper">
-      <div class="evolution__main">
-        <div id="evolutionFour" class="evolution__four"></div>
-        <div class="evolution__main-heading">Top air inlets</div>
-        <div class="evolution__main-postlog">4 Top Air inlets including a GrillVent™ chin ventilation system</div>
-        <div class="evolution__main-text">The enlarged Easy Flow channels introduced on the EPS liner potentiate the fresh airﬂow distributing the cool air into the interior  around the head contour</div>
-      </div>
-      <div class="evolution__side">
-        <div class="evolution__prelog prelog">Evolution</div>
-        <h2 class="evolution__heading">The game<br/> has changed</h2>
-        <p class="evolution__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
-        <img id="evolutionHelmet" src="img/evolution-helmet.png" alt="Legendary stig racing helmet adapted" class="evolution__image" data-wow-duration="0.7s">
-      </div>
+    <div id="evolution" class="container">
+        <div class="evolution__wrapper">
+            <div class="evolution__main">
+                <div id="evolutionFour" class="evolution__four"></div>
+                <div class="evolution__main-mobile">
+                    <div class="evolution__main-heading">Top air inlets</div>
+                    <div class="evolution__main-postlog">4 Top Air inlets including a GrillVent™ chin ventilation system</div>
+                </div>
+                <div class="evolution__main-text">The enlarged Easy Flow channels introduced on the EPS liner potentiate the fresh airﬂow distributing the cool air into the interior  around the head contour</div>
+            </div>
+            <div class="evolution__side">
+                <div class="evolution__prelog prelog">Evolution</div>
+                <h2 class="evolution__heading">The game<br/> has changed</h2>
+                <p class="evolution__desc">Legendary Stig racing helmet now adapted for High Speed motorbike ride</p>
+                <img id="evolutionHelmet" src="img/evolution-helmet.png" alt="Legendary stig racing helmet adapted" class="evolution__image" data-wow-duration="0.7s">
+            </div>
+        </div>
+        <div class="evolution__last">
+            improved shell aerodynamics to reduce the drag
+        </div>
     </div>
-    <div class="evolution__last">
-      improved shell aerodynamics to reduce the drag
-    </div>
-  </div>
 </section>
 
 <section id="noiseContainer" class="features">
-  <div class="container">
-    <div class="noise">
-      <div class="noise__img-wrapper">
-        <img id="noiseHelmet" class="noise__img" src="img/noise-helmet.png" alt="Wind proof barier helmet">
-        <div class="noiseText" id="noiseText">
-          <img class="noise__percents" src="img/7.png" alt="+7 % noise reduction">
-          <div class="noise__img-text">Noise reduction</div>
+    <div class="container">
+        <div class="noise">
+            <div class="noise__img-wrapper">
+                <img id="noiseHelmet" class="noise__img" src="img/noise-helmet.png" alt="Wind proof barier helmet">
+                <div class="noiseText" id="noiseText">
+                    <img class="noise__percents" src="img/7.png" alt="+7 % noise reduction">
+                    <div class="noise__img-text">Noise reduction</div>
+                </div>
+            </div>
+            <div class="noise__text">
+                <div class="noise__prelog prelog">Wind proof barier</div>
+                <h2 class="noise__heading">Soundproofing and hermetic sealing</h2>
+                <p class="noise__desc">Optimum Visor Closing operated in the front in a central positioning that allows a more soundprooﬁng and hermetic sealing providing a noise reduction by 7% compare to previous model</p>
+                <div class="noise__icon">Easy to operate Quick release micrometric buckle</div>
+            </div>
         </div>
-      </div>
-      <div class="noise__text">
-        <div class="noise__prelog prelog">Wind proof barier</div>
-        <h2 class="noise__heading">Soundproofing and hermetic sealing</h2>
-        <p class="noise__desc">Optimum Visor Closing operated in the front in a central positioning that allows a more soundprooﬁng and hermetic sealing providing a noise reduction by 7% compare to previous model</p>
-        <div class="noise__icon">Easy to operate Quick release micrometric buckle</div>
-      </div>
+        <div class="sizes">
+            <div id="sizes" class="sizes__text">
+                <div class="sizes__prelog prelog">All sizes</div>
+                <h2 class="sizes__heading">Perfect fit and Comfort</h2>
+                <p class="sizes__desc">Lightweigh composite Matrix shell, with 2 shell sizes combining compact dimensions with Perfect fit and Comfort.</p>
+            </div>
+            <div class="sizes__wrapper">
+                <div id="sizesWrapper" class="sizes__buttons-wrapper">
+                    <div class="sizes__hint">Choose your size:</div>
+                    <div id="sizesButtons" class="sizes__buttons">
+                        <button class="sizes__button sizes__button_active"><span>XS</span></button>
+                        <button class="sizes__button"><span>Small</span></button>
+                        <button class="sizes__button"><span>Medium</span></button>
+                        <button class="sizes__button"><span>Large</span></button>
+                        <button class="sizes__button"><span>XLarge</span></button>
+                        <button class="sizes__button"><span>XXL</span></button>
+                    </div>
+                </div>
+                <div id="sizesHelmet" class="sizes__img">
+                    <img src="img/sizes-helmet.png" alt="Perfect and control street FX Pro helmet" class="sizes__helmet">
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="sizes">
-      <div id="sizes" class="sizes__text">
-        <div class="sizes__prelog prelog">All sizes</div>
-        <h2 class="sizes__heading">Perfect fit and Comfort</h2>
-        <p class="sizes__desc">Lightweigh composite Matrix shell, with 2 shell sizes combining compact dimensions with Perfect fit and Comfort.</p>
-      </div>
-      <div class="sizes__wrapper">
-        <div id="sizesWrapper" class="sizes__buttons-wrapper">
-          <div class="sizes__hint">Choose your size:</div>
-          <div id="sizesButtons" class="sizes__buttons">
-            <button class="sizes__button sizes__button_active"><span>XS</span></button>
-            <button class="sizes__button"><span>Small</span></button>
-            <button class="sizes__button"><span>Medium</span></button>
-            <button class="sizes__button"><span>Large</span></button>
-            <button class="sizes__button"><span>XLarge</span></button>
-            <button class="sizes__button"><span>XXL</span></button>
-          </div>
-          <div class="sizes__price">£ 229.99</div>
-          <button class="sizes__button-buy button"><span>Order now</span></button>
-        </div>
-        <div id="sizesHelmet" class="sizes__img">
-          <img src="img/sizes-helmet.png" alt="Perfect and control street FX Pro helmet" class="sizes__helmet">
-        </div>
-      </div>
-    </div>
-  </div>
 </section>
 
 <section class="specs">
-  <div class="container">
-    <div id="specsWrapper" class="specs__wrapper specs__wrapper_top">
-      <div id="specsHelmet" class="specs__helmet">
-        <img class="specs__helmet-img" src="img/scratch-helmet.png" alt="Street FX pro antiscretch helmet">
-        <img class="specs__visor" src="img/visor-light.png" >
-      </div>
-      <div class="specs__text">
-        <div class="specs__prelog prelog">Hardwearing</div>
-        <h2 class="specs__heading">Anti Scratch coated visor</h2>
-        <p class="specs__desc">Anti Scratch coated visor in optical polycarbonate</p>
-        <div class="specs__icon specs__icon_shower">Removable<br> and washable pads</div>
-      </div>
-    </div>
-    <div class="specs__wrapper">
-      <div id="protectionWrapper" class="specs__text">
-        <div class="specs__prelog specs__prelog_bottom prelog">Protection</div>
-        <h2 class="specs__heading specs__heading_bottom">Hi-Impact energy absorption</h2>
-        <p class="specs__desc specs__desc_bottom">Inner shell with Hi-Impact  energy absorption liner EPS</p>
-        <div class="specs__icon specs__icon_temperature">
-          <div class="specs__icon-heading">Climat friendly</div>
-          <div class="specs__icon-text">Quick Wicking Material keep you cool and dry in hot summer days and comfortably worm during  a cold day</div>
+    <div class="container">
+        <div id="specsWrapper" class="specs__wrapper specs__wrapper_top">
+            <div id="specsHelmet" class="specs__helmet">
+                <img class="specs__helmet-img" src="img/scratch-helmet.png" alt="Street FX pro antiscretch helmet">
+                <img class="specs__visor" src="img/visor-light.png" >
+            </div>
+            <div class="specs__text">
+                <div class="specs__prelog prelog">Hardwearing</div>
+                <h2 class="specs__heading">Anti Scratch coated visor</h2>
+                <p class="specs__desc">Anti Scratch coated visor in optical polycarbonate</p>
+                <div class="specs__icon specs__icon_shower">Removable<br> and washable pads</div>
+            </div>
         </div>
-      </div>
+        <div class="specs__wrapper">
+            <div id="protectionWrapper" class="specs__text specs__text_2">
+                <div class="specs__prelog specs__prelog_bottom prelog">Protection</div>
+                <h2 class="specs__heading specs__heading_bottom">Hi-Impact energy absorption</h2>
+                <p class="specs__desc specs__desc_bottom">Inner shell with Hi-Impact  energy absorption liner EPS</p>
+                <div class="specs__icon specs__icon_temperature">
+                    <div class="specs__icon-heading">Climat friendly</div>
+                    <div class="specs__icon-text">Quick Wicking Material keep you cool and dry in hot summer days and comfortably worm during  a cold day</div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="question">
-  <div id="specs" class="container">
-    <img id="protectionHelmet" src="img/question-top-helmet.png" class="question__top-helmet">
-    <div id="questionHelmet" class="question__helmet"></div>
-    <div class="question__specs">
-      <div class="question__list-heading">Specifications</div>
-      <div class="question__list">
-        Weight: 1300 grs +/- 50 grs<br/>
-        Shell sizes: XS to XXL<br/>
-        Homologation: DOT FMVSS 21<br/>
-      </div>
+    <div id="specs" class="container">
+        <img id="protectionHelmet" src="img/question-top-helmet.png" class="question__top-helmet">
+        <div id="questionHelmet" class="question__helmet"></div>
+        <div class="question__specs">
+            <div class="question__list-heading">Specifications</div>
+            <div class="question__list">
+                Weight: 1300 grs +/- 50 grs<br/>
+                Shell sizes: XS to XXL<br/>
+                Homologation: DOT FMVSS 21<br/>
+            </div>
+        </div>
+        <div id="contact" class="question__prelog prelog">Just write to us</div>
+        <div class="question__heading">Any questions?</div>
+        <form action="#">
+            <div class="question__form-wrapper question__form-wrapper_first">
+                <div class="question__input-wrapper">
+                    <input class="question__input" type="text" placeholder="Your name">
+                    <span class="question__input-border"></span>
+                </div>
+                <div class="question__input-wrapper">
+                    <input class="question__input" type="email" placeholder="Your email">
+                    <span class="question__input-border"></span>
+                </div>
+            </div>
+            <div class="question__form-wrapper question__form-wrapper_second">
+                <textarea class="question__textarea" placeholder="Text of your message"></textarea>
+                <span class="question__input-border"></span>
+            </div>
+            <div class="question__button-wrapper">
+                <button class="button"><span>Send</span></button>
+            </div>
+        </form>
     </div>
-    <div id="contact" class="question__prelog prelog">Just write to us</div>
-    <div class="question__heading">Any questions?</div>
-    <form action="#">
-      <div class="question__form-wrapper question__form-wrapper_first">
-        <div class="question__input-wrapper">
-          <input class="question__input" type="text" placeholder="Your name">
-          <span class="question__input-border"></span>
-        </div>
-        <div class="question__input-wrapper">
-          <input class="question__input" type="email" placeholder="Your email">
-          <span class="question__input-border"></span>
-        </div>
-      </div>
-      <div class="question__form-wrapper question__form-wrapper_second">
-        <textarea class="question__textarea" placeholder="Text of your message"></textarea>
-        <span class="question__input-border"></span>
-      </div>
-      <div class="question__button-wrapper">
-        <button class="button"><span>Send</span></button>
-      </div>
-    </form>
-  </div>
 </section>
 
 <section class="visit">
-  <div id="visit" class="container">
-    <div class="visit__header">More Helmets</div>
-    <div class="visit__link">on www.matrixhelmets.com</div>
-    <div class="visit__wrapper">
-      <div id="visitHelmet1" class="visit__image-wrapper">
-        <img class="visit__image" src="img/visit-1.png" alt="Street FX Pro helmet variant 1">
-      </div>
-      <div id="visitHelmet2" class="visit__image-wrapper">
-        <img class="visit__image" src="img/visit-2.png" alt="Street FX Pro helmet variant 2">
-      </div>
-      <div id="visitHelmet3" class="visit__image-wrapper">
-        <img class="visit__image" src="img/visit-3.png" alt="Street FX Pro helmet variant 3">
-      </div>
-      <div id="visitHelmet4" class="visit__image-wrapper">
-        <img class="visit__image" src="img/visit-4.png" alt="Street FX Pro helmet variant 4">
-      </div>
+    <div id="visit" class="container">
+        <div class="visit__header">More Helmets</div>
+        <div class="visit__link">on www.matrixhelmets.com</div>
+        <div class="visit__wrapper">
+            <div id="visitHelmet1" class="visit__image-wrapper">
+                <img class="visit__image" src="img/visit-1.png" alt="Street FX Pro helmet variant 1">
+            </div>
+            <div id="visitHelmet2" class="visit__image-wrapper">
+                <img class="visit__image" src="img/visit-2.png" alt="Street FX Pro helmet variant 2">
+            </div>
+            <div id="visitHelmet3" class="visit__image-wrapper">
+                <img class="visit__image" src="img/visit-3.png" alt="Street FX Pro helmet variant 3">
+            </div>
+            <div id="visitHelmet4" class="visit__image-wrapper">
+                <img class="visit__image" src="img/visit-4.png" alt="Street FX Pro helmet variant 4">
+            </div>
+        </div>
+        <a href="https://www.matrixhelmets.com/" target="_blank"><button class="visit__button button"><span>Visit store</span></button></a>
     </div>
-    <a href="https://www.matrixhelmets.com/" target="_blank"><button class="visit__button button"><span>Visit store</span></button></a>
-  </div>
 </section>
 
 <section class="about">
-  <div id="aboutus" class="container">
-  <div id="aboutus" class="container">
-    <div class="about__prelog prelog">New culture</div>
-    <h2 class="about__heading">About our company</h2>
-    <div class="about__wrapper">
-      <p class="about__text">Based in London, UK, Matrix Helmets is on a mission to revolutionise the way you see motorcycle safety. We’re committed to bringing you a unique spin on quality safety wear, ushering out the aged, older style of bulky, cumbersome helmets, and bringing a modern, sleek new style when you’re riding your pride and joy, be it in the city or anywhere else! All of our specialiseddesigns are put through rigorous testing and exposed to our fully safety conscious philosophy. The end result that ends up in your hands is the result of perfect craftsmanship, and purpose built for any purpose imaginable. Whether it’s racing,travelling, or braving the elements, you can breathe easy, knowing every one of our helmets is providing you with nothing but top quality performance. After all, as a rider of such a fine power machine, it’s exactly what you deserve.</p>
-      <div class="about__philosophy">
-        <h3 class="about__phil-heading">Our philosophy</h3>
-        <div class="about__phil-text">We are a movement and safety is at the heart of this special movement. We want you to taste the best adventure! We are dedicated to guide, inspire and equip everyone to explore their own adventures.</div>
-      </div>
-    </div>
-  </div>
+    <div id="aboutus" class="container">
+        <div class="about__prelog prelog">New culture</div>
+        <h2 class="about__heading">About our company</h2>
+        <div class="about__wrapper">
+            <p class="about__text">Based in London, UK, Matrix Helmets is on a mission to revolutionise the way you see motorcycle safety. We’re committed to bringing you a unique spin on quality safety wear, ushering out the aged, older style of bulky, cumbersome helmets, and bringing a modern, sleek new style when you’re riding your pride and joy, be it in the city or anywhere else! All of our specialiseddesigns are put through rigorous testing and exposed to our fully safety conscious philosophy. The end result that ends up in your hands is the result of perfect craftsmanship, and purpose built for any purpose imaginable. Whether it’s racing,travelling, or braving the elements, you can breathe easy, knowing every one of our helmets is providing you with nothing but top quality performance. After all, as a rider of such a fine power machine, it’s exactly what you deserve.</p>
+            <div class="about__philosophy">
+                <h3 class="about__phil-heading">Our philosophy</h3>
+                <div class="about__phil-text">We are a movement and safety is at the heart of this special movement. We want you to taste the best adventure! We are dedicated to guide, inspire and equip everyone to explore their own adventures.</div>
+            </div>
+        </div>
 </section>
 
 <footer class="footer">
-  <div class="container">
-    <div class="footer__wrapper">
-      <div class="footer__text">
-        <img class="footer__logo" src="img/icons/logo_white-white.svg" alt="Matrix motorcycle helmets logo">
-        <p class="footer__text-wrapper">Matrix is, quite simply, the next wave in motorcycle helmet and protective gear design and anufacturing. We create a classic , Modern and Authentic Streetfighter style helmet for riders who like to choose something exceptional.</p>
-      </div>
-      <nav class="footer__nav">
-        <div class="footer__list-heading">Navigation</div>
-        <nav class="footer__list">
-          <div onclick="scrollToElement('customization')" class="footer__list-item">Customization</div>
-          <div onclick="scrollToElement('evolution')" class="footer__list-item">Features</div>
-          <div onclick="scrollToElement('sizes')" class="footer__list-item">Size range</div>
-          <div onclick="scrollToElement('specs')" class="footer__list-item">Specifications</div>
-          <div onclick="scrollToElement('contact')" class="footer__list-item">Contact</div>
-          <div onclick="scrollToElement('aboutus')" class="footer__list-item">About company</div>
-          <a href="https://www.matrixhelmets.com/" target="_blank" class="footer__list-item">Visit official website</a>
-          <a href="https://www.matrixhelmets.com/contact/?id=faq" target="_blank" class="footer__list-item">Returns</a>
-        </nav>
-      </nav>
-      <div class="footer__follow">
-        <div class="footer__list-heading">Follow us</div>
-        <div class="footer__socials">
-          <a href="https://www.facebook.com/MatrixHelmets" class="footer__social-item"><img src="img/icons/facebook.svg" alt="Matrix Facebook logo"></a>
-          <a href="https://www.instagram.com/matrix_helmets/" class="footer__social-item"><img src="img/icons/instagram.svg" alt="Matrix Instagram logo"></a>
-          <a href="https://twitter.com/Matrix_Helmets" class="footer__social-item"><img src="img/icons/twitter.svg" alt="Matrix Twitter logo"></a>
-          <!--<a href="#" class="footer__social-item"><img src="img/icons/youtube.svg" alt="Matrix Youtube logo"></a>-->
+    <div class="container">
+        <div class="footer__wrapper">
+            <div class="footer__text">
+                <img class="footer__logo" src="img/icons/logo_white-white.svg" alt="Matrix motorcycle helmets logo">
+                <p class="footer__text-wrapper">Matrix is, quite simply, the next wave in motorcycle helmet and protective gear design and anufacturing. We create a classic , Modern and Authentic Streetfighter style helmet for riders who like to choose something exceptional.</p>
+            </div>
+            <div class="footer__mobile">
+                <nav class="footer__nav">
+                    <div class="footer__list-heading">Navigation</div>
+                    <nav class="footer__list">
+                        <div onclick="scrollToElement('customization')" class="footer__list-item">Customization</div>
+                        <div onclick="scrollToElement('evolution')" class="footer__list-item">Features</div>
+                        <div onclick="scrollToElement('sizes')" class="footer__list-item">Size range</div>
+                        <div onclick="scrollToElement('specs')" class="footer__list-item">Specifications</div>
+                        <div onclick="scrollToElement('contact')" class="footer__list-item">Contact</div>
+                        <div onclick="scrollToElement('aboutus')" class="footer__list-item">About company</div>
+                        <a href="https://www.matrixhelmets.com/" target="_blank" class="footer__list-item">Visit official website</a>
+                        <a href="https://www.matrixhelmets.com/contact/?id=faq" target="_blank" class="footer__list-item">Returns</a>
+                    </nav>
+                </nav>
+                <div class="footer__follow">
+                    <div class="footer__list-heading">Follow us</div>
+                    <div class="footer__socials">
+                        <a href="https://www.facebook.com/MatrixHelmets" class="footer__social-item"><img src="img/icons/facebook.svg" alt="Matrix Facebook logo"></a>
+                        <a href="https://www.instagram.com/matrix_helmets/" class="footer__social-item"><img src="img/icons/instagram.svg" alt="Matrix Instagram logo"></a>
+                        <a href="https://twitter.com/Matrix_Helmets" class="footer__social-item"><img src="img/icons/twitter.svg" alt="Matrix Twitter logo"></a>
+                        <!--<a href="#" class="footer__social-item"><img src="img/icons/youtube.svg" alt="Matrix Youtube logo"></a>-->
+                    </div>
+                    <div class="footer__copyright">Copyright © 2018<br>
+                        Matrix Motorcycle helmets.<br>
+                        All Rights Reserved.</div>
+                </div>
+                <div class="footer__payment">
+                    <div class="footer__list-heading">Payment option</div>
+                    <div class="footer__payment-wrapper">
+                        <img src="img/icons/visa.svg" class="footer__payment-item">
+                        <img src="img/icons/paypal.svg" class="footer__payment-item">
+                        <img src="img/icons/mastercard.svg" class="footer__payment-item">
+                        <img src="img/icons/american-express.svg" class="footer__payment-item">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="footer__copyright">Copyright © 2018<br>
-          Matrix Motorcycle helmets.<br>
-          All Rights Reserved.</div>
-      </div>
-      <div class="footer__payment">
-        <div class="footer__list-heading">Payment option</div>
-        <div class="footer__payment-wrapper">
-          <img src="img/icons/visa.svg" class="footer__payment-item">
-          <img src="img/icons/paypal.svg" class="footer__payment-item">
-          <img src="img/icons/mastercard.svg" class="footer__payment-item">
-          <img src="img/icons/american-express.svg" class="footer__payment-item">
-        </div>
-      </div>
     </div>
-  </div>
 </footer>
 
+<div class="modal" id="modal">
+    <div class="modal__wrapper">
+        <div class="nav__close" onclick="modalClose()"></div>
+        <div class="modal__left">
+            <div id="modalHelmet" class="modal__helmet-wrapper">
+
+            </div>
+            <div class="custom__category">Your style</div>
+            <div class="custom__props modal__props">
+                <div class="custom__prop">
+                    <span class="custom__prop-key">Helmet:</span>
+                    <span class="custom__prop-fill"></span>
+                    <span id="chosen-helmet-modal" class="custom__prop-value">Army Green</span>
+                </div>
+                <div class="custom__prop">
+                    <span class="custom__prop-key">Visor:</span>
+                    <span class="custom__prop-fill"></span>
+                    <span id="chosen-visor-modal" class="custom__prop-value">Chamaelon Iridium</span>
+                </div>
+                <div class="custom__prop">
+                    <span class="custom__prop-key">Visor holders:</span>
+                    <span class="custom__prop-fill"></span>
+                    <span id="chosen-holder-modal" class="custom__prop-value">Gold</span></div>
+            </div>
+        </div>
+        <div class="modal__right">
+            <div class="modal__heading">Buy helmet</div>
+            <div class="modal__price">£ 229.99</div>
+            <div class="modal__buttons">
+                <div class="modal__buttons-wrapper">
+                    <div class="modal__hint">Choose your size:</div>
+                    <div class="modal__buttons">
+                        <button id="buttonxs" onclick="changeSize('xs')" class="modal__button modal__button_active"><span>XS</span></button>
+                        <button id="buttonS" onclick="changeSize('S')" class="modal__button"><span>Small</span></button>
+                        <button id="buttonM" onclick="changeSize('M')" class="modal__button"><span>Medium</span></button>
+                        <button id="buttonL" onclick="changeSize('L')" class="modal__button"><span>Large</span></button>
+                        <button id="buttonXL" onclick="changeSize('XL')" class="modal__button"><span>XLarge</span></button>
+                        <button id="buttonXXL" onclick="changeSize('XXL')" class="modal__button"><span>XXL</span></button>
+                    </div>
+                </div>
+            </div>
+            <button class="modal__button-buy button"><span>Add to card</span></button>
+        </div>
+    </div>
+</div>
+<link rel="stylesheet" href="bundle.css">
 <script src="bundle.js"></script>
+<script>
+    window.onload = function(){
+        document.getElementById('preloader').style.opacity = 0;
+        setTimeout(function(){
+            document.body.removeChild(document.getElementById('preloader'));
+            document.body.style.overflowY = 'auto';
+        }, 450)
+    }
+</script>
 </body>
 </html>

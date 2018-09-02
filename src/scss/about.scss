@@ -35,10 +35,16 @@
   }
   &__heading {
     margin-bottom: 110px;
+    @media (max-width: 767px) {
+      margin-bottom: 40px;
+    }
   }
   &__wrapper {
     display: flex;
     justify-content: space-between;
+    @media (max-width: 1300px) {
+      flex-direction: column;
+    }
   }
   &__text {
     position: relative;
@@ -49,6 +55,13 @@
     line-height: 1.9;
     font-size: 16px;
     letter-spacing: 0.5px;
+    @media (max-width: 1300px) {
+      width: 100%;
+      margin-bottom: 50px;
+    }
+    @media (max-width: 600px) {
+      padding-left: 40px;
+    }
     &:before {
       content: '';
       position: absolute;
@@ -57,10 +70,21 @@
       width: 55px;
       height: 1px;
       background-color: #dc1a1a;
+      @media (max-width: 600px) {
+        width: 25px;
+      }
     }
   }
   &__philosophy {
     width: 480px;
+    @media (max-width: 1300px) {
+      width: 560px;
+      padding-left: 80px;
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      padding-left: 40px;
+    }
   }
   &__phil-heading {
     margin-bottom: 30px;

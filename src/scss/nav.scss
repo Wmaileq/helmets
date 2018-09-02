@@ -11,6 +11,10 @@
   transform: translateX(-480px);
   transition: transform 0.3s;
   transition-timing-function: ease;
+  @media (max-width: 500px) {
+    width: 100%;
+    padding-left: 30px;
+  }
   &_active {
     transform: translateX(0);
   }
@@ -112,6 +116,13 @@
   width: 42px;
   height: 80px;
   cursor: pointer;
+  @media (max-width: 991px) {
+    left: 55px;
+  }
+  @media (max-width: 767px) {
+    left: 35px;
+    top: 35px;
+  }
   &:hover {
     .nav-button__icon-side:before {
       animation: burger-icon-side_1 linear infinite 0.4s;
@@ -137,6 +148,14 @@
     font-weight: 300px;
     letter-spacing: 1.4px;
     color: #5c6772;
+    @media (max-width: 991px) {
+      right: -55px;
+      bottom: auto;
+      top: 20px;
+    }
+    @media (max-width: 520px) {
+      display: none;
+    }
   }
 
   &__icon-side {

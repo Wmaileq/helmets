@@ -1,12 +1,12 @@
 .header {
   position: relative;
   width: 100%;
-  height: 1205px;
   background: url('img/header-bg.jpg') center center no-repeat;
   background-size: cover;
   overflow: hidden;
   &__container {
     height: 100%;
+    padding-bottom: 513px;
     &:before {
       content: '';
       position: absolute;
@@ -16,7 +16,10 @@
       background-color: #2b2f33;
       width: 1150px;
       height: 200px;
-      transform: rotate(-17.5deg)
+      transform: rotate(-17.5deg);
+      @media (max-width:767px) {
+        bottom: 58px;
+      }
     }
     &:after {
       content: '';
@@ -27,7 +30,10 @@
       background-color: #2b2f33;
       width: 800px;
       height: 200px;
-      transform: rotate(-31.7deg)
+      transform: rotate(-31.7deg);
+      @media (max-width:767px) {
+        bottom: 500px;
+      }
     }
   }
   &__logo-wrapper {
@@ -35,23 +41,46 @@
     height: 142px;
     justify-content: center;
     align-items: center;
+    @media (max-width: 600px) {
+      height: 120px;
+    }
   }
   &__logo {
     width: 209px;
     height: 35px;
     background: url('img/icons/logo_red-white.svg') center center no-repeat;
     background-size: cover;
+    @media (max-width: 600px) {
+      background: url('img/icons/logo_red-white.svg') left center no-repeat;
+      background-size: cover;
+      width: 44px;
+    }
   }
   &__wrapper {
     position: relative;
     z-index: 1;
     display: flex;
-
+    @media (max-width: 1310px) {
+      justify-content: space-between;
+    }
+    @media (max-width: 767px) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
   &__text {
     padding-top: 55px;
     padding-left: 6px;
     width: 480px;
+    @media (max-width: 1310px) {
+      width: calc(300px + (100vw - 768px)*180/542);
+      padding-top: calc(25px + (100vw - 768px)*30/542);
+    }
+    @media (max-width: 767px) {
+      width: 100%;
+      max-width: 480px;
+      text-align: center;
+    }
   }
 
   &__prelog {
@@ -72,10 +101,34 @@
     letter-spacing: 0.6px;
     font-weight: 300;
     color: #7c8c9b;
+    @media (max-width: 1310px) {
+      width: 90%;
+      font-size: calc(14px + (100vw - 768px)*2/542);
+    }
+    @media (max-width: 1050px) {
+      margin-bottom: 60px;
+    }
+    @media (max-width: 767px) {
+      height: 120px;
+      font-size: 14px;
+      max-width: none;
+      width: 100%;
+      margin-bottom: calc(200px + (100vw - 320px)*190/448);
+    }
+    @media (max-width: 400px) {
+      margin-bottom: 180px;
+    }
   }
   &__image {
     position: relative;
     width: calc(100% - 480px);
+    @media (max-width: 1310px) {
+      width: calc(100% - 600px);
+    }
+    @media (max-width: 767px) {
+      position: absolute;
+      top: calc(160px + (100vw - 320px)*35/448);
+    }
   }
 
   &__helmet {
@@ -87,6 +140,16 @@
     height: 946px;
     background: url('img/header-helmet.png') center center no-repeat;
     background-size: cover;
+    @media (max-width: 1310px) {
+      top: calc(-20px - (100vw - 768px)*121/542);
+      right: calc(-80px - (100vw - 768px)*136/542);
+      width: calc(499px + (100vw - 768px)*379/542);
+      height: calc(538px + (100vw - 768px)*408/542);
+    }
+    @media (max-width: 767px) {
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
 
   &__customize {
@@ -107,6 +170,13 @@
     cursor: pointer;
     transition: box-shadow 0.2s ease;
     box-shadow: 0 0 0 0 rgba(#d21515, 0.38);
+    @media (max-width: 767px) {
+      right: -120px
+    }
+    @media (max-width: 600px) {
+      top: 80px;
+      transform: scale(0.8);
+    }
     &:hover {
       box-shadow: 10px 15px 30px 2px rgba(#d21515, 0.38);
       &:after {
@@ -137,6 +207,11 @@
       background: url('img/icons/spray.svg') center center no-repeat;
       -webkit-background-size: cover;
       background-size: cover;
+    }
+  }
+  &__button {
+    @media (max-width: 767px){
+      margin: 0 auto!important;
     }
   }
 }

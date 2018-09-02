@@ -5,11 +5,41 @@
   background: transparent url('img/question-bg.png') center center no-repeat;
   background-size: cover;
   text-align: center;
+  @media (max-width: 767px) {
+    padding-bottom: 450px;
+  }
   &__top-helmet {
     position: absolute;
     top: -270px;
     right: -140px;
     opacity: 0;
+    @media (max-width: 1600px) {
+      right: -80px
+    }
+    @media (max-width: 1450px) {
+      width: 700px;
+      right: 0;
+    }
+    @media (max-width: 1150px) {
+      top: -50px;
+      width: 550px;
+      right: 0;
+    }
+    @media (max-width: 950px) {
+      top: 0;
+      width: 400px;
+    }
+    @media (max-width: 767px) {
+      margin-top: -580px;
+      right: 50%;
+      transform: translateX(50%);
+    }
+    @media (max-width: 500px) {
+      width: 350px;
+    }
+    @media (max-width: 400px) {
+      width: 280px;
+    }
     &.animated {
       opacity: 1;
       animation: slideInUp 0.9s ease;
@@ -25,6 +55,14 @@
     border-radius: 50%;
     background-color: #dc1a1a;
     opacity: 0;
+    @media (max-width: 1000px) {
+      margin-top: 650px;
+      width: 70vw;
+      height: 70vw;
+    }
+    @media (max-width: 500px) {
+      margin-top: 450px;  
+    }
     &.animated {
       opacity: 1;
       animation: zoomIn 0.9s ease;
@@ -67,15 +105,28 @@
     color: #fff;
     text-transform: uppercase;
     font-style: italic;
+    @media (max-width: 767px) {
+      font-size: 35px;
+      margin-bottom: 55px;
+    }
   }
   &__form-wrapper {
     position: relative;
     display: flex;
+    @media (max-width: 600px) {
+      flex-direction: column;
+    }
     &_first {
       margin-bottom: 110px;
+      @media (max-width: 600px) {
+        margin-bottom: 40px;
+      }
     }
     &_second {
       margin-bottom: 135px;
+      @media (max-width: 600px) {
+        margin-bottom: 40px;
+      }
     }
   }
   &__input-wrapper {
@@ -83,6 +134,10 @@
     flex-grow: 1;
     &:nth-of-type(1) {
       margin-right: 85px;
+      @media (max-width: 600px) {
+        margin-right: 0;
+        margin-bottom: 40px;
+      }
     }
   }
   &__input {

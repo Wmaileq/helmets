@@ -68,7 +68,7 @@ function buildCSS() {
 }
 
 function buildJS() {
-  return gulp.src([path.src.js + 'wow.min.js', path.src.js + 'main.js'])
+  return gulp.src([path.src.js + 'main.js'])
     .pipe(concatjs('bundle.js'))
     // .pipe(babel({
     //   presets: ['env']
@@ -80,7 +80,7 @@ function buildJS() {
 
 function buildImgs() {
   return gulp.src(path.src.img)
-    // .pipe(imagemin())
+    //.pipe(imagemin())
     .pipe(gulp.dest(path.public.img))
     .pipe(bs.reload({stream: true}))
 }

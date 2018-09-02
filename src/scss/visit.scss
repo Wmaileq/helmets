@@ -6,6 +6,9 @@
   background: #101214 url('img/visit-bg.png') top center no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
+  @media (max-width: 767px) {
+    padding-bottom: 350px;
+  }
   &__header {
     margin-bottom: 10px;
     font-size: 36px;
@@ -24,11 +27,22 @@
     display: flex;
     width: 800px;
     justify-content: space-between;
+    @media (max-width: 900px) {
+      width: 100%;
+    }
+    @media (max-width: 767px) {
+      flex-wrap: wrap;
+      margin-bottom: 60px;
+    }
   }
   &__image-wrapper {
     position: relative;
     opacity: 0;
     transition: opacity;
+    @media (max-width: 767px) {
+      width: 50%;
+      margin-bottom: 40px;
+    }
     &.animated {
       opacity: 1;
       animation: slideInLeft 0.4s ease;
@@ -63,6 +77,12 @@
   &__image {
     position: relative;
     height: 160px;
+    @media (max-width:800px) {
+      height: calc(80px + (100vw - 320px)*50/480);
+    }
+    @media (max-width: 767px) {
+      height: 100px;
+    }
   }
     &__button {
     margin: 0 auto;

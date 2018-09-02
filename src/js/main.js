@@ -17,24 +17,28 @@ function scrollToElement(element) {
     window.scrollTo({top: position, behavior: 'smooth'})
 }
 
-new WOW().init();
+function nextStep(step){
+    if (step === 2) {
+        document.getElementById('step-1').classList.value = 'custom__opt-wrapper passed';
+        document.getElementById('step-2').classList.value = 'custom__opt-wrapper active';
+    }
+    if (step === 3) {
+        document.getElementById('step-2').classList.value = 'custom__opt-wrapper passed';
+        document.getElementById('step-3').classList.value = 'custom__opt-wrapper active';
+        document.getElementById('final-step').classList.value = 'custom__mobile-style active'
+    }
+}
 
 const constructor = {
     helmetM: document.getElementById('helmet-m'),
     helmetG: document.getElementById('helmet-g'),
     helmetW: document.getElementById('helmet-w'),
-    visorG1: document.getElementById('visor-g-1'),
-    visorG2: document.getElementById('visor-g-2'),
-    visorG3: document.getElementById('visor-g-3'),
-    visorG4: document.getElementById('visor-g-4'),
-    visorG5: document.getElementById('visor-g-5'),
-    visorG6: document.getElementById('visor-g-6'),
-    visorW1: document.getElementById('visor-w-1'),
-    visorW2: document.getElementById('visor-w-2'),
-    visorW3: document.getElementById('visor-w-3'),
-    visorW4: document.getElementById('visor-w-4'),
-    visorW5: document.getElementById('visor-w-5'),
-    visorW6: document.getElementById('visor-w-6'),
+    visor1: document.getElementById('visor-1'),
+    visor2: document.getElementById('visor-2'),
+    visor3: document.getElementById('visor-3'),
+    visor4: document.getElementById('visor-4'),
+    visor5: document.getElementById('visor-5'),
+    visor6: document.getElementById('visor-6'),
     holder1: document.getElementById('holder-1'),
     holder2: document.getElementById('holder-2'),
     holder3: document.getElementById('holder-3'),
@@ -42,17 +46,18 @@ const constructor = {
     holder5: document.getElementById('holder-5'),
     holder6: document.getElementById('holder-6'),
     holder7: document.getElementById('holder-7'),
-    helmetChosen: 'helmetG',
-    visorChosen: false,
-    holderChosen: false,
+    helmetChosen: 'helmetM',
+    visorChosen: 'visor2',
+    holderChosen: 'holder7',
+    sizeChosen: 'XS',
     playStartingAnimation : function() {
         this.helmetG.classList += ' visible animation-start';
-        setTimeout(() => this.visorG5.classList += ' visible visor-1 animation-start', 700);
-        setTimeout(() => this.visorG2.classList += ' visible visor-2 animation-start', 1000);
-        setTimeout(() => this.visorG4.classList += ' visible visor-3 animation-start', 1300);
-        setTimeout(() => this.visorG3.classList += ' visible visor-4 animation-start', 1600);
-        setTimeout(() => this.visorG6.classList += ' visible visor-5 animation-start', 1900);
-        setTimeout(() => this.visorG1.classList += ' visible visor-6 animation-start', 2200);
+        setTimeout(() => this.visor5.classList += ' visible visor-1 animation-start', 700);
+        setTimeout(() => this.visor2.classList += ' visible visor-2 animation-start', 1000);
+        setTimeout(() => this.visor4.classList += ' visible visor-3 animation-start', 1300);
+        setTimeout(() => this.visor3.classList += ' visible visor-4 animation-start', 1600);
+        setTimeout(() => this.visor6.classList += ' visible visor-5 animation-start', 1900);
+        setTimeout(() => this.visor1.classList += ' visible visor-6 animation-start', 2200);
         setTimeout(() => this.holder1.classList += ' visible holder-1 animation-start', 700);
         setTimeout(() => this.holder2.classList += ' visible holder-2 animation-start', 1060);
         setTimeout(() => this.holder3.classList += ' visible holder-3 animation-start', 1420);
@@ -96,22 +101,22 @@ const constructor = {
         document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).classList += ' chosen';
         document.getElementById('chosen-helmet').innerText = document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).querySelector('.custom__opt-name').innerText;
         this[helmet].classList += ' visible helmet-chosen';
+        setTimeout(() => this.chooseVisor('2'),400);
         this.helmetChosen = helmet;
     },
     chooseVisor: function(visor) {
         this.resetAll('visor');
         document.getElementById('option-visor-' + visor).classList += ' chosen';
         document.getElementById('chosen-visor').innerText = document.getElementById('option-visor-' + visor).querySelector('.custom__opt-name').innerText;
-        visor = this.helmetChosen === 'helmetG' ? 'visorG' + visor : 'visorW' + visor;
-        this[visor].classList += ' visible visor-chosen';
-        this.visorChosen = true;
+        this['visor' + visor].classList += ' visible visor-chosen';
+        this.visorChosen = 'visor' + visor;
     },
     chooseHolder: function(holder) {
         this.resetAll('holder');
         document.getElementById('option-holder-' + holder.slice(-1)).classList += ' chosen';
         document.getElementById('chosen-holder').innerText = document.getElementById('option-holder-' + holder.slice(-1)).querySelector('.custom__opt-name').innerText;
         this[holder].classList += ' visible holder-chosen';
-        this.holderChosen = true;
+        this.holderChosen = holder;
     }
 };
 document.getElementById('option-helmet-g').addEventListener('click', constructor.chooseHelmet.bind(constructor, 'helmetG'));
@@ -145,19 +150,19 @@ let visitAnimationPlayed = false;
 
 function doSomething(scroll_pos) {
     if (!scrollArrowVisible && scroll_pos > 100) {
-        document.getElementById('arrowToTop').classList.value += ' visible';
+        document.getElementById('arrowToTop').classList.value += ' visibleArr';
         document.getElementById('arrowToTop').classList.remove('invisible');
         scrollArrowVisible = true;
     } else if (scrollArrowVisible && scroll_pos<= 100) {
-        document.getElementById('arrowToTop').classList.remove('visible');
+        document.getElementById('arrowToTop').classList.remove('visibleArr');
         document.getElementById('arrowToTop').classList.value += ' invisible';
         scrollArrowVisible = false
     }
-    if (!constructorAnimationPlayed && scroll_pos > document.getElementById('customization').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 230) {
+    if (!constructorAnimationPlayed && scroll_pos > document.getElementById('customization').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 380) {
         constructor.playStartingAnimation();
         constructorAnimationPlayed = true;
     }
-    if (!evolutionHelmetAnimationPlayed && scroll_pos > document.getElementById('evolution').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 300) {
+    if (!evolutionHelmetAnimationPlayed && scroll_pos > document.getElementById('evolution').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 380) {
         document.getElementById('evolutionHelmet').classList.value += ' slideInRightBottom';
         document.getElementById('evolutionFour').classList.value += ' zoomIn';
         evolutionHelmetAnimationPlayed = true
@@ -167,7 +172,7 @@ function doSomething(scroll_pos) {
         document.getElementById('noiseText').classList.value += ' animated';
         noiseAnimationPlayed = true
     }
-    if (!sizesAnimationPlayed && scroll_pos > document.getElementById('sizesWrapper').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 350) {
+    if (!sizesAnimationPlayed && scroll_pos > document.getElementById('sizesWrapper').getBoundingClientRect().top - document.body.getBoundingClientRect().top - 400) {
         document.getElementById('sizesButtons').classList.value += ' animated';
         document.getElementById('sizesHelmet').classList.value += ' animated';
         sizesAnimationPlayed = true
@@ -189,7 +194,7 @@ function doSomething(scroll_pos) {
         document.getElementById('visitHelmet2').classList.value += ' animated';
         document.getElementById('visitHelmet3').classList.value += ' animated';
         document.getElementById('visitHelmet4').classList.value += ' animated';
-        specsAnimationPlayed = true
+        visitAnimationPlayed = true
     }
 }
 
@@ -203,3 +208,30 @@ window.addEventListener('scroll', function() {
         ticking = true;
     }
 });
+
+function modalShow(){
+    document.getElementById('modal').classList.value += ' active';
+    let helmet = constructor[constructor.helmetChosen].cloneNode();
+    helmet.classList='modal__helmet';
+    let visor = constructor[constructor.visorChosen].cloneNode();
+    visor.classList='modal__visor';
+    let holder = constructor[constructor.holderChosen].cloneNode();
+    holder.classList='modal__holder';
+    let wrapper = document.getElementById('modalHelmet');
+    while (wrapper.firstChild) {
+        wrapper.removeChild(wrapper.firstChild);
+    }
+    wrapper.append(helmet)
+    wrapper.append(visor)
+    wrapper.append(holder)
+}
+
+function changeSize(size){
+    constructor.sizeChosen=size;
+    document.querySelectorAll('.modal__button_active')[0].classList.remove('modal__button_active')
+    document.getElementById('button'+size).classList +=  ' modal__button_active'
+}
+
+function modalClose(){
+    document.getElementById('modal').classList.remove('active');
+}
