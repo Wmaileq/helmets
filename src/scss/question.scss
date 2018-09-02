@@ -6,7 +6,7 @@
   background-size: cover;
   text-align: center;
   @media (max-width: 767px) {
-    padding-bottom: 650px;
+    padding-bottom: 450px;
   }
   &__top-helmet {
     position: absolute;
@@ -59,6 +59,9 @@
       margin-top: 650px;
       width: 70vw;
       height: 70vw;
+    }
+    @media (max-width: 500px) {
+      margin-top: 450px;  
     }
     &.animated {
       opacity: 1;

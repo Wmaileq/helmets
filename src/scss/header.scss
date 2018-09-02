@@ -16,7 +16,10 @@
       background-color: #2b2f33;
       width: 1150px;
       height: 200px;
-      transform: rotate(-17.5deg)
+      transform: rotate(-17.5deg);
+      @media (max-width:767px) {
+        bottom: 58px;
+      }
     }
     &:after {
       content: '';
@@ -27,7 +30,10 @@
       background-color: #2b2f33;
       width: 800px;
       height: 200px;
-      transform: rotate(-31.7deg)
+      transform: rotate(-31.7deg);
+      @media (max-width:767px) {
+        bottom: 500px;
+      }
     }
   }
   &__logo-wrapper {

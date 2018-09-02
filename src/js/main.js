@@ -101,6 +101,7 @@ const constructor = {
         document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).classList += ' chosen';
         document.getElementById('chosen-helmet').innerText = document.getElementById('option-helmet-' + helmet.slice(-1).toLowerCase()).querySelector('.custom__opt-name').innerText;
         this[helmet].classList += ' visible helmet-chosen';
+        setTimeout(() => this.chooseVisor('2'),400);
         this.helmetChosen = helmet;
     },
     chooseVisor: function(visor) {
