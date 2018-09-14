@@ -78,6 +78,12 @@
       height: 288px;
       background: url('img/4.png') center center no-repeat;
       background-size: cover;
+      @media (max-width: 575px) {
+        width: 210px;
+        height: 225px;
+        left: calc(50% - 125px);
+        top: calc(50% - 124px);
+      }
     }
   }
   &__main-heading {

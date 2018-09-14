@@ -15,17 +15,26 @@ function scrollToElement(element) {
         }
     }
     window.scrollTo({top: position, behavior: 'smooth'})
+    toggleMenu();
 }
 
 function nextStep(step){
+    if (step === 1) {
+        document.getElementById('step-1').classList.value = 'custom__opt-wrapper active';
+        document.getElementById('step-2').classList.value = 'custom__opt-wrapper';
+    }
     if (step === 2) {
         document.getElementById('step-1').classList.value = 'custom__opt-wrapper passed';
         document.getElementById('step-2').classList.value = 'custom__opt-wrapper active';
+        document.getElementById('step-3').classList.value = 'custom__opt-wrapper';
+        document.getElementById('customizationContainer').classList += 'custom_step-1';
+        document.getElementById('final-step').classList.remove('active');
     }
     if (step === 3) {
         document.getElementById('step-2').classList.value = 'custom__opt-wrapper passed';
         document.getElementById('step-3').classList.value = 'custom__opt-wrapper active';
-        document.getElementById('final-step').classList.value = 'custom__mobile-style active'
+        document.getElementById('final-step').classList.value = 'custom__mobile-style active';
+        document.getElementById('customizationContainer').classList.remove('custom_step-1')
     }
 }
 

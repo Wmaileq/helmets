@@ -159,7 +159,7 @@
     </div>
 </section>
 
-<section class="custom">
+<section id="customizationContainer" class="custom custom_step-1">
     <div class="container">
         <div class="custom__constructor">
             <div class="custom__result">
@@ -202,6 +202,8 @@
                     <div class="custom__price">£ 229.99</div>
                     <button class="custom__button button" onclick="modalShow()"><span>Buy</span></button>
                     <div class="custom__hint">With current options</div>
+                    <div class="custom__or">or</div>
+                    <div  onclick="nextStep(2)" class="custom__prev-step">Choose another visor</div>
                 </div>
             </div>
             <div class="custom__options">
@@ -257,6 +259,8 @@
                         </div>
                         <div onclick="nextStep(3)" class="button custom__mobile-button"><span>Next Step</span></div>
                     </div>
+                    <div class="custom__or">or</div>
+                    <div  onclick="nextStep(1)" class="custom__prev-step">Choose another helmet</div>
                 </div>
                 <div id="step-3" class="custom__opt-wrapper">
                     <div class="custom__opt-heading">Visour holders colour</div>
